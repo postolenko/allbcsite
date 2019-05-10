@@ -531,4 +531,269 @@ $(document).ready(function() {
         });
     }
 
+    var dropdowmMenu;
+
+    $(".dropdown_item_title").on('click', function(e) {
+        e.preventDefault();
+        parentBlock = $(this).closest(".dropdow_item_wrapp");
+        dropdowmMenu = parentBlock.find(".dropdown_item_menu");
+        if(dropdowmMenu.is(":hidden")) {
+            dropdowmMenu.slideDown(300);
+            parentBlock.addClass("active");
+        } else {
+            dropdowmMenu.slideUp(300);
+            parentBlock.removeClass("active");
+        }
+    });
+
+    $(this).keydown(function(eventObject){
+        if (eventObject.which == 27) {
+            $(".dropdown_item_menu").slideUp(300);
+            setTimeout(function() {
+                $(".dropdow_item_wrapp").removeClass("active");
+            }, 400);
+        }
+    });
+
+    $(document).mouseup(function(e) {
+        var hide_element = $(".dropdown_item_menu");
+        if (!hide_element.is(e.target)
+            && hide_element.has(e.target).length === 0) {
+            hide_element.slideUp(300);
+            setTimeout(function() {
+                $(".dropdow_item_wrapp").each(function() {
+                    if($(this).find(".dropdown_item_menu").is(":hidden")) {
+                        $(this).removeClass("active");
+                    }
+                });
+            }, 400);
+        }
+    });
+
+    $(".custom_select .select_input").on("click", function(e) {
+        e.preventDefault();
+        parentBlock = $(this).closest(".custom_select");
+        dropdowmMenu = parentBlock.find(".dropdown_select");
+        if(dropdowmMenu.is(":hidden")) {
+            dropdowmMenu.slideDown(200);
+            parentBlock.addClass("active");
+        } else {
+            dropdowmMenu.slideUp(200);
+            parentBlock.removeClass("active");
+        }
+    });
+
+    $(this).keydown(function(eventObject){
+        if (eventObject.which == 27) {
+            $(".dropdown_select").slideUp(300);
+            setTimeout(function() {
+                $(".custom_select").removeClass("active");
+            }, 400);
+        }
+    });
+
+    $(document).mouseup(function(e) {
+        var hide_element = $(".dropdown_select");
+        if (!hide_element.is(e.target)
+            && hide_element.has(e.target).length === 0) {
+            hide_element.slideUp(300);
+            setTimeout(function() {
+                $(".dropdown_select").each(function() {
+                    if($(this).find(".custom_select").is(":hidden")) {
+                        $(this).removeClass("active");
+                    }
+                });
+            }, 400);
+        }
+    });
+
+    $(".select_item p").on("click", function(e) {
+        e.preventDefault();
+        var itemText = $(this).text();
+        parentBlock = $(this).closest(".custom_select");
+        var inputVal = parentBlock.find(".select_input");
+        inputVal.val(itemText);
+    });
+
+    // Range Slider
+
+    var leftRange;
+    var rightRange;
+
+    if( document.getElementById("range_slider") ) {
+
+        priceSlider = document.getElementById("range_slider");
+        var values;
+
+        noUiSlider.create(priceSlider, {
+          start: [ 1000, 3500 ],
+          range: {
+              'min': [  0 ],
+              'max': [ 8906 ]
+          },
+          connect: true,
+            format: wNumb({
+                decimals: 0
+            }),
+            pips: {
+                mode: 'steps',
+                stepped: true,
+                density: 4
+            }
+        });
+
+        inputNumberMin = document.getElementById("input-number_1");
+        inputNumberMax = document.getElementById("input-number_2");
+
+        // setStep = 200;
+        // var leftRange;
+        // var rightRange;
+        // var activeInputVal;
+
+        priceSlider.noUiSlider.on('update', function( values, handle ) {
+
+          $("#input-number_1").attr("value",  parseInt( values[0] ) );
+          $("#input-number_2").attr("value",  parseInt( values[1] ) );
+
+          leftRange = parseInt( values[0] );
+          rightRange = parseInt( values[1] );
+
+        });
+
+        $("#input-number_1").keyup(function() {
+            activeInputVal = parseInt( $(this).val() );
+            if( activeInputVal < parseInt( $("#input-number_2").val() ) ) {
+                leftRange = parseInt( $(this).val() );
+                priceSlider.noUiSlider.set([leftRange, null]);
+            }
+        });
+
+        $("#input-number_2").keyup(function() {
+          activeInputVal = parseInt( $(this).val() );
+          if( activeInputVal > parseInt( $("#input-number_1").val() ) ) {
+              rightRange = parseInt( $(this).val() );
+              priceSlider.noUiSlider.set([null, rightRange]);
+          }
+        });
+
+    }
+
+    if( document.getElementById("range_slider_2") ) {
+
+        priceSlider2 = document.getElementById("range_slider_2");
+        var values;
+
+        noUiSlider.create(priceSlider2, {
+          start: [ 1000, 50000 ],
+          range: {
+              'min': [ 0 ],
+              'max': [ 100000 ]
+          },
+          connect: true,
+            format: wNumb({
+                decimals: 0
+            }),
+            pips: {
+                mode: 'steps',
+                stepped: true,
+                density: 4
+            }
+        });
+
+        // inputNumberMin2 = document.getElementById("input-number_3");
+        // inputNumberMax2 = document.getElementById("input-number_4");
+
+        // setStep = 200;
+        // var leftRange;
+        // var rightRange;
+        // var activeInputVal;
+
+        priceSlider2.noUiSlider.on('update', function( values, handle ) {
+
+          $("#input-number_3").text(parseInt( values[0] ) );
+          $("#input-number_4").text(parseInt( values[1] ) );
+          // $("#range_2_vals").html( parseInt( values[0] ) +" - "+ parseInt( values[1] ) );
+          console.log( parseInt( values[0] ) +" - "+ parseInt( values[1] ) );
+
+          // leftRange = parseInt( values[0] );
+          // rightRange = parseInt( values[1] );
+
+        });
+
+    }
+
+    if( document.getElementById("range_slider_3") ) {
+
+        priceSlider3 = document.getElementById("range_slider_3");
+        var values;
+
+        noUiSlider.create(priceSlider3, {
+          start: [ 1000 ],
+          range: {
+              'min': [ 0 ],
+              'max': [ 100000 ]
+          },
+          connect: true,
+          tooltips: true,
+            format: wNumb({
+                decimals: 0
+            }),
+        });
+
+    }
+
+    if( document.getElementById("range_slider_4") ) {
+
+        priceSlider4 = document.getElementById("range_slider_4");
+        // var values;
+
+        noUiSlider.create(priceSlider4, {
+          start: [ 1000, 3500 ],
+          range: {
+              'min': [  0 ],
+              'max': [ 8906 ]
+          },
+          connect: true,
+            format: wNumb({
+                decimals: 0
+            }),
+            pips: {
+                mode: 'steps',
+                stepped: true,
+                density: 4
+            }
+        });
+
+        inputNumberMin = document.getElementById("input-number_5");
+        inputNumberMax = document.getElementById("input-number_6");
+
+        priceSlider4.noUiSlider.on('update', function( values, handle ) {
+
+          $("#input-number_5").attr("value",  parseInt( values[0] ) );
+          $("#input-number_6").attr("value",  parseInt( values[1] ) );
+
+          leftRange = parseInt( values[0] );
+          rightRange = parseInt( values[1] );
+
+        });
+
+        $("#input-number_5").keyup(function() {
+            activeInputVal = parseInt( $(this).val() );
+            if( activeInputVal < parseInt( $("#input-number_6").val() ) ) {
+                leftRange = parseInt( $(this).val() );
+                priceSlider.noUiSlider.set([leftRange, null]);
+            }
+        });
+
+        $("#input-number_6").keyup(function() {
+          activeInputVal = parseInt( $(this).val() );
+          if( activeInputVal > parseInt( $("#input-number_5").val() ) ) {
+              rightRange = parseInt( $(this).val() );
+              priceSlider.noUiSlider.set([null, rightRange]);
+          }
+        });
+
+    }
+
+
 });
