@@ -1660,7 +1660,7 @@ textarea:focus {
     background-color: #ffffff;   
     padding: 3px 0 4px 0;
     position: relative;
-    z-index: 3;
+    z-index: 4;
     border-bottom: 1px solid #e5e5e5;
 }
 
