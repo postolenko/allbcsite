@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="icon" type="image/png" href="favicon/favicon.ico" sizes="16x16">
 	<title>Allbc</title>
-	<!-- <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> -->
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </head>
 
 <body>
@@ -144,7 +144,7 @@
 	<!-- /Header - Inner -->
 
 	<!-- Content -->
-		<div class="content content_2">
+		<div class="content content_2 content_resp">
 
 			<!-- Section 1 - Info Side Page -->
 
@@ -158,49 +158,8 @@
 										<div class="dropdown_item_title">
 											<div class="item_title_text">Аренда</div>
 										</div>
-										<div class="dropdown_item_menu arend">
-											<h4>Аренда офиса</h4>
-											<div class="range_slider_wrapp">
-												<div id="range_slider"></div>
-											</div>
-											<div class="range_inputs">
-												<div class="col">
-													<div class="input_wrapp inline">
-														<input type="number" placeholder="99999" id="input-number_1"/>
-													</div>
-													<div class="slash inline"></div>
-													<div class="input_wrapp inline">
-														<input type="number" placeholder="99999" id="input-number_2"/>
-													</div>
-													<div class="inline">
-														<div class="custom_select">
-															<input type="text" class="select_input" value="$/кв.m/mec" readonly="readonly" />
-															<div class="dropdown_select">
-																<div class="select_item">
-																	<p>$/кв.m/mec</p>
-																</div>
-																<div class="select_item">
-																	<p>$/mec</p>
-																</div>
-																<div class="select_item">
-																	<p>&#8372;/кв.m/mec</p>
-																</div>
-																<div class="select_item">
-																	<p>&#8372;/mec</p>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="footer_two_cols clearfix">
-												<div class="left">
-													<p><a href="#" class="black_link">Очистить</a></p>
-												</div>
-												<div class="right">
-													<p><a href="#" class="green_link">Применить</a></p>
-												</div>
-											</div>
+										<div class="dropdown_item_menu single">
+											<a href="#">Продажа</a>
 										</div>
 									</div>
 								</div>
@@ -253,13 +212,48 @@
 												</div>
 											</div>
 										</div>
-										<div class="dropdown_item_menu w_2">
+										<div class="dropdown_item_menu arend">
 											<h4>Подобрать стоимость</h4>
-											<div class="range_slider_wrapp range_slider_wrapp_2">
+											<div class="range_slider_wrapp">
 												<div id="range_slider_2"></div>
 											</div>
-											<div class="align_center">
-												<button type="button" class="green_pill">Применить</button>
+											<div class="range_inputs">
+												<div class="col">
+													<div class="input_wrapp inline">
+														<input type="number" placeholder="99999" id="input-number_1"/>
+													</div>
+													<div class="slash inline"></div>
+													<div class="input_wrapp inline">
+														<input type="number" placeholder="99999" id="input-number_2"/>
+													</div>
+													<div class="inline">
+														<div class="custom_select">
+															<input type="text" class="select_input" value="$/кв.m/mec" readonly="readonly" />
+															<div class="dropdown_select">
+																<div class="select_item">
+																	<p>$/кв.m/mec</p>
+																</div>
+																<div class="select_item">
+																	<p>$/mec</p>
+																</div>
+																<div class="select_item">
+																	<p>&#8372;/кв.m/mec</p>
+																</div>
+																<div class="select_item">
+																	<p>&#8372;/mec</p>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="footer_two_cols clearfix">
+												<div class="left">
+													<p><a href="#" class="black_link">Очистить</a></p>
+												</div>
+												<div class="right">
+													<p><a href="#" class="green_link">Применить</a></p>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -319,12 +313,6 @@
 														</div>
 													</div>
 												</div>
-												<!-- <div class="search_wrapp">
-													<form>
-														<input type="submit" class="search_submit" value=" ">
-														<input type="text" class="search_input" placeholder="Введите название метро" />
-													</form>
-												</div> -->
 												<div class="align_center search_pill_wrapp">
 													<button type="button" class="green_pill search_pill">Поиск</button>
 												</div>
@@ -522,14 +510,20 @@
 													<p>ул. Льва Толстого, 57</p>
 												</div>
 												<div class="metro_wrapp">
-													<p><i class="metro"></i>Театральная ~ 900 м</p>
+													<p><i class="metro"></i>Театральная <span class="about">~</span> 900 м</p>
 												</div>
 											</div>
 											<div class="two_cols_2_col">
-												<div class="office_cont office_cont_2">
-													<i class="room"></i>
-													<h5>24</h5>
-													<p>офиса</p>
+												<div class="office_cont_wrapp">
+													<div class="office_cont">
+														<div class="col">
+															<i class="room"></i>
+														</div>
+														<div class="col">
+															<h5>24</h5>
+														</div>
+													</div>
+													<p>офисов</p>
 												</div>
 											</div>
 										</div>
@@ -651,10 +645,16 @@
 												</div>
 											</div>
 											<div class="two_cols_2_col">
-												<div class="office_cont office_cont_2">
-													<i class="room"></i>
-													<h5>24</h5>
-													<p>офиса</p>
+												<div class="office_cont_wrapp">
+													<div class="office_cont">
+														<div class="col">
+															<i class="room"></i>
+														</div>
+														<div class="col">
+															<h5>24</h5>
+														</div>
+													</div>
+													<p>офисов</p>
 												</div>
 											</div>
 										</div>
@@ -776,10 +776,16 @@
 												</div>
 											</div>
 											<div class="two_cols_2_col">
-												<div class="office_cont office_cont_2">
-													<i class="room"></i>
-													<h5>24</h5>
-													<p>офиса</p>
+												<div class="office_cont_wrapp">
+													<div class="office_cont">
+														<div class="col">
+															<i class="room"></i>
+														</div>
+														<div class="col">
+															<h5>24</h5>
+														</div>
+													</div>
+													<p>офисов</p>
 												</div>
 											</div>
 										</div>
@@ -901,10 +907,16 @@
 												</div>
 											</div>
 											<div class="two_cols_2_col">
-												<div class="office_cont office_cont_2">
-													<i class="room"></i>
-													<h5>24</h5>
-													<p>офиса</p>
+												<div class="office_cont_wrapp">
+													<div class="office_cont">
+														<div class="col">
+															<i class="room"></i>
+														</div>
+														<div class="col">
+															<h5>24</h5>
+														</div>
+													</div>
+													<p>офисов</p>
 												</div>
 											</div>
 										</div>
@@ -1094,10 +1106,16 @@
 												</div>
 											</div>
 											<div class="two_cols_2_col">
-												<div class="office_cont office_cont_2">
-													<i class="room"></i>
-													<h5>24</h5>
-													<p>офиса</p>
+												<div class="office_cont_wrapp">
+													<div class="office_cont">
+														<div class="col">
+															<i class="room"></i>
+														</div>
+														<div class="col">
+															<h5>24</h5>
+														</div>
+													</div>
+													<p>офисов</p>
 												</div>
 											</div>
 										</div>
@@ -1219,10 +1237,16 @@
 												</div>
 											</div>
 											<div class="two_cols_2_col">
-												<div class="office_cont office_cont_2">
-													<i class="room"></i>
-													<h5>24</h5>
-													<p>офиса</p>
+												<div class="office_cont_wrapp">
+													<div class="office_cont">
+														<div class="col">
+															<i class="room"></i>
+														</div>
+														<div class="col">
+															<h5>24</h5>
+														</div>
+													</div>
+													<p>офисов</p>
 												</div>
 											</div>
 										</div>
@@ -1344,10 +1368,16 @@
 												</div>
 											</div>
 											<div class="two_cols_2_col">
-												<div class="office_cont office_cont_2">
-													<i class="room"></i>
-													<h5>24</h5>
-													<p>офиса</p>
+												<div class="office_cont_wrapp">
+													<div class="office_cont">
+														<div class="col">
+															<i class="room"></i>
+														</div>
+														<div class="col">
+															<h5>24</h5>
+														</div>
+													</div>
+													<p>офисов</p>
 												</div>
 											</div>
 										</div>
@@ -1469,10 +1499,16 @@
 												</div>
 											</div>
 											<div class="two_cols_2_col">
-												<div class="office_cont office_cont_2">
-													<i class="room"></i>
-													<h5>24</h5>
-													<p>офиса</p>
+												<div class="office_cont_wrapp">
+													<div class="office_cont">
+														<div class="col">
+															<i class="room"></i>
+														</div>
+														<div class="col">
+															<h5>24</h5>
+														</div>
+													</div>
+													<p>офисов</p>
 												</div>
 											</div>
 										</div>
@@ -1570,7 +1606,7 @@
 
 			<!-- Section 2 - Info Side Page -->
 
-			<section class="sect_2_info_side">
+			<!-- <section class="sect_2_info_side">
 				<div class="row">					
 					<div class="text_box" id="slide_tags" data-minheight="175">
 						<div class="inner_height">
@@ -1597,14 +1633,13 @@
 						<a href="#" class="green_link show_text" data-slidebox-id = "slide_tags"><i class="plus"></i><span class="show">Показать больше</span><span class="hide">Свернуть</span></a>
 					</div>
 				</div>
-
-			</section>
+			</section> -->
 
 			<!-- /Section 2 - Info Side Page -->
 
 			<!-- Section 3 - Info Side Page -->
 
-			<section class="sect_3_info_side">
+			<!-- <section class="sect_3_info_side">
 				<div class="row">
 					<h2>Статистика по районам</h2>
 					<div class="table_slider_wrapp">
@@ -1802,19 +1837,15 @@
 						</div>
 					</div>
 				</div>
-
-			</section>
+			</section> -->
 
 			<!-- /Section 3 - Info Side Page -->
 
 			<!-- Section 4 - Info Side Page -->
 
-			<section class="sect_7_2">
-				
+			<!-- <section class="sect_7_2">
 				<div class="row">
-
 					<h2>О нас</h2>
-
 					<div class="text_box" id="slide_text" data-minheight="142">
 						<div class="inner_height">
 							<p>allbc.info -  готовое решение поиска офиса,- мы знаем все обо всех! На сайте отображена вся информация, необходимая для принятия решения, об аренде офиса или его покупки, дальше только осмотр и подписание Договора. Задайте требуемые параметры поиска и просматривайте актуальную информацию про каждый объект: фото, цены, свободные офисы, планировки и т.д. Добавляйте в избранное, сравнивайте по вашим ключевым потребностям, договаривайтесь с собственником на просмотр и подписывайте Договор без посредников. Однако, если вам нужна наша помощь, мы готовы подобрать вам подходящие предложения и договориться на осмотры выбранных офисов за фиксированную плату. Все наши сотрудники лично знакомы практически с каждым объектом и собственником, поэтому готовы предоставить вам исчерпывающую консультацию для принятия решения.</p>
@@ -1840,20 +1871,17 @@
 							</ol>
 						</div>
 					</div>
-
 					<div class="showmore_wrapp">
 						<a href="#" class="green_link show_text" data-slidebox-id = "slide_text"><i class="plus"></i><span class="show">Показать больше</span><span class="hide">Свернуть</span></a>
 					</div>
-
 				</div>
-
-			</section>
+			</section> -->
 
 			<!-- /Section 4 - Info Side Page -->
 
 			<!-- Section 8 - Info Side Page -->
 
-			<section>
+			<!-- <section>
 				<div class="row">
 					<div class="breadcrumbs_wrapp">
 						<ul class="breadcrumbs">
@@ -1863,7 +1891,7 @@
 						</ul>
 					</div>
 				</div>
-			</section>
+			</section> -->
 
 			<!-- /Section 8 - Info Side Page -->
 

@@ -538,8 +538,10 @@ $(document).ready(function() {
         parentBlock = $(this).closest(".dropdow_item_wrapp");
         dropdowmMenu = parentBlock.find(".dropdown_item_menu");
         if(dropdowmMenu.is(":hidden")) {
+            $(".item_wrapp").removeClass("z_top");
             dropdowmMenu.slideDown(300);
             parentBlock.addClass("active");
+            parentBlock.closest(".item_wrapp").addClass("z_top");
         } else {
             dropdowmMenu.slideUp(300);
             parentBlock.removeClass("active");
@@ -599,8 +601,8 @@ $(document).ready(function() {
             hide_element.slideUp(300);
             setTimeout(function() {
                 $(".dropdown_select").each(function() {
-                    if($(this).find(".custom_select").is(":hidden")) {
-                        $(this).removeClass("active");
+                    if($(this).is(":hidden")) {
+                        $(this).closest(".custom_select").removeClass("active");
                     }
                 });
             }, 400);
@@ -619,70 +621,10 @@ $(document).ready(function() {
 
     var leftRange;
     var rightRange;
-
-    if( document.getElementById("range_slider") ) {
-
-        priceSlider = document.getElementById("range_slider");
-        var values;
-
-        noUiSlider.create(priceSlider, {
-          start: [ 1000, 3500 ],
-          range: {
-              'min': [  0 ],
-              'max': [ 8906 ]
-          },
-          connect: true,
-            format: wNumb({
-                decimals: 0
-            }),
-            pips: {
-                mode: 'steps',
-                stepped: true,
-                density: 4
-            }
-        });
-
-        inputNumberMin = document.getElementById("input-number_1");
-        inputNumberMax = document.getElementById("input-number_2");
-
-        // setStep = 200;
-        // var leftRange;
-        // var rightRange;
-        // var activeInputVal;
-
-        priceSlider.noUiSlider.on('update', function( values, handle ) {
-
-          $("#input-number_1").attr("value",  parseInt( values[0] ) );
-          $("#input-number_2").attr("value",  parseInt( values[1] ) );
-
-          leftRange = parseInt( values[0] );
-          rightRange = parseInt( values[1] );
-
-        });
-
-        $("#input-number_1").keyup(function() {
-            activeInputVal = parseInt( $(this).val() );
-            if( activeInputVal < parseInt( $("#input-number_2").val() ) ) {
-                leftRange = parseInt( $(this).val() );
-                priceSlider.noUiSlider.set([leftRange, null]);
-            }
-        });
-
-        $("#input-number_2").keyup(function() {
-          activeInputVal = parseInt( $(this).val() );
-          if( activeInputVal > parseInt( $("#input-number_1").val() ) ) {
-              rightRange = parseInt( $(this).val() );
-              priceSlider.noUiSlider.set([null, rightRange]);
-          }
-        });
-
-    }
+    var values;
 
     if( document.getElementById("range_slider_2") ) {
-
         priceSlider2 = document.getElementById("range_slider_2");
-        var values;
-
         noUiSlider.create(priceSlider2, {
           start: [ 1000, 50000 ],
           range: {
@@ -699,34 +641,32 @@ $(document).ready(function() {
                 density: 4
             }
         });
-
-        // inputNumberMin2 = document.getElementById("input-number_3");
-        // inputNumberMax2 = document.getElementById("input-number_4");
-
-        // setStep = 200;
-        // var leftRange;
-        // var rightRange;
-        // var activeInputVal;
-
         priceSlider2.noUiSlider.on('update', function( values, handle ) {
-
-          $("#input-number_3").text(parseInt( values[0] ) );
-          $("#input-number_4").text(parseInt( values[1] ) );
-          // $("#range_2_vals").html( parseInt( values[0] ) +" - "+ parseInt( values[1] ) );
-          console.log( parseInt( values[0] ) +" - "+ parseInt( values[1] ) );
-
-          // leftRange = parseInt( values[0] );
-          // rightRange = parseInt( values[1] );
-
+            $("#input-number_3").text(parseInt( values[0] ) );
+            $("#input-number_4").text(parseInt( values[1] ) );
+            $("#input-number_1").attr("value",  parseInt( values[0] ) );
+            $("#input-number_2").attr("value",  parseInt( values[1] ) );
+            leftRange = parseInt( values[0] );
+            rightRange = parseInt( values[1] );
         });
-
+        $("#input-number_1").keyup(function() {
+            activeInputVal = parseInt( $(this).val() );
+            if( activeInputVal < parseInt( $("#input-number_2").val() ) ) {
+                leftRange = parseInt( $(this).val() );
+                priceSlider2.noUiSlider.set([leftRange, null]);
+            }
+        });
+        $("#input-number_2").keyup(function() {
+          activeInputVal = parseInt( $(this).val() );
+          if( activeInputVal > parseInt( $("#input-number_1").val() ) ) {
+              rightRange = parseInt( $(this).val() );
+              priceSlider2.noUiSlider.set([null, rightRange]);
+          }
+        });
     }
 
     if( document.getElementById("range_slider_3") ) {
-
         priceSlider3 = document.getElementById("range_slider_3");
-        var values;
-
         noUiSlider.create(priceSlider3, {
           start: [ 1000 ],
           range: {
@@ -739,14 +679,10 @@ $(document).ready(function() {
                 decimals: 0
             }),
         });
-
     }
 
     if( document.getElementById("range_slider_4") ) {
-
         priceSlider4 = document.getElementById("range_slider_4");
-        // var values;
-
         noUiSlider.create(priceSlider4, {
           start: [ 1000, 3500 ],
           range: {
@@ -763,20 +699,14 @@ $(document).ready(function() {
                 density: 4
             }
         });
-
         inputNumberMin = document.getElementById("input-number_5");
         inputNumberMax = document.getElementById("input-number_6");
-
         priceSlider4.noUiSlider.on('update', function( values, handle ) {
-
           $("#input-number_5").attr("value",  parseInt( values[0] ) );
           $("#input-number_6").attr("value",  parseInt( values[1] ) );
-
           leftRange = parseInt( values[0] );
           rightRange = parseInt( values[1] );
-
         });
-
         $("#input-number_5").keyup(function() {
             activeInputVal = parseInt( $(this).val() );
             if( activeInputVal < parseInt( $("#input-number_6").val() ) ) {
@@ -784,7 +714,6 @@ $(document).ready(function() {
                 priceSlider.noUiSlider.set([leftRange, null]);
             }
         });
-
         $("#input-number_6").keyup(function() {
           activeInputVal = parseInt( $(this).val() );
           if( activeInputVal > parseInt( $("#input-number_5").val() ) ) {
@@ -792,7 +721,6 @@ $(document).ready(function() {
               priceSlider.noUiSlider.set([null, rightRange]);
           }
         });
-
     }
 
 

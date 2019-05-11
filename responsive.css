@@ -1,8 +1,32 @@
+@media only screen and (max-width: 1380px) {
+
+	/*-- Section 1 - Info Side Page --*/
+
+	.dropdown_item_title {
+		padding: 8px 19px 8px 13px;
+	}
+
+	/*-- /Section 1 - Info Side Page --*/
+
+}
+
 @media only screen and (max-width: 1240px) {
 
 	.row {
 		padding: 0 25px;
 	}
+
+	/*-- Section 1 - Info Side Page --*/
+
+	.items_sect {
+	    margin: 0 -2px;
+	}
+
+	.item_wrapp {
+	    padding: 3px 2px;
+	}
+
+	/*-- /Section 1 - Info Side Page --*/
 
 }
 
@@ -246,6 +270,14 @@
 
 	/*-- /Section 9 --*/
 
+	/*-- Section 1 - Info Side Page --*/
+
+	.dropdown_item_title {
+	    padding: 8px 21px 8px 9px;
+	}
+
+	/*-- /Section 1 - Info Side Page --*/
+
 	/*-- Footer --*/
 
 	.footer_templ .col:nth-child(2) {
@@ -265,6 +297,10 @@
 
 @media only screen and (max-width: 800px) {
 
+	.content_resp {
+		padding-top: 54px;
+	}
+
 	/*-- Header --*/
 
 	.header_site {
@@ -273,6 +309,27 @@
 
 	.header_site.js {
 		background: rgba(0, 0, 0, .8);
+	}
+
+	.header_site_inner.js {
+		background: rgb(255, 255, 255);
+	}
+
+	.header_site_inner.js .dropdown_title {
+	    padding-top: 10px;
+	    padding-bottom: 6px;
+	}
+
+	.header_site_inner.js .header_1 .row {
+		padding-right: 64px;
+	}
+
+	.header_site_inner.js .header_1 .dropdown_title:before {
+	    top: 22px;
+	}
+
+	.header_site_inner.js .respmenubtn span {
+	    background: #000000;
 	}
 
 	.header_site > .row {
@@ -397,6 +454,10 @@
 	    height: 19px;
 	    top: 8px;
 	    right: 0;
+	}
+
+	.header_site_inner .main_nav_wrapp {
+	    background: rgba(255, 255, 255, .95);
 	}
 
 	/*-- /Header --*/
