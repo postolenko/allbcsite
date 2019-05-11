@@ -2034,6 +2034,16 @@ textarea:focus {
 
 }
 
+.price_w {
+    min-width: 300px;
+}
+
+.custom_select_wrapp {
+    max-width: 90px;
+    position: relative;
+    z-index: 2;
+}
+
 .custom_select {
     position: relative;
 }
@@ -2049,7 +2059,8 @@ textarea:focus {
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
-    top: 16px;
+    /*top: 16px;*/
+    top: 10px;
     right: 0;
     -webkit-transition-property: transform;
     -webkit-transition-duration: .3s;
@@ -2083,7 +2094,7 @@ textarea:focus {
     vertical-align: top;
     width: 86px;
     cursor: pointer;
-    margin: 9px 6px;
+    margin: 3px 0 9px 0;
     border: 1px solid transparent;
     font-size: 14px;
     font-weight: 400;
@@ -2134,6 +2145,7 @@ textarea:focus {
 
 .footer_two_cols {
     margin-bottom: 12px;
+    max-width: 201px;
 }
 
 .footer_two_cols .left {

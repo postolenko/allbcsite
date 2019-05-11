@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="icon" type="image/png" href="favicon/favicon.ico" sizes="16x16">
 	<title>Allbc</title>
-	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+	<!-- <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> -->
 </head>
 
 <body>
@@ -184,7 +184,7 @@
 													</div>
 													<div class="inline inline_2">
 														<div class="select_item">
-															<p>кв.m</p>
+															<p>m2</p>
 														</div>
 													</div>
 												</div>
@@ -212,39 +212,37 @@
 												</div>
 											</div>
 										</div>
-										<div class="dropdown_item_menu arend">
+										<div class="dropdown_item_menu price_w">
 											<h4>Подобрать стоимость</h4>
+											<div class="custom_select_wrapp">
+												<div class="custom_select">
+													<input type="text" class="select_input" value="$/m2/mec" readonly="readonly" />
+													<div class="dropdown_select">
+														<div class="select_item">
+															<p>$/m2/mec</p>
+														</div>
+														<div class="select_item">
+															<p>$/mec</p>
+														</div>
+														<div class="select_item">
+															<p>&#8372;/m2/mec</p>
+														</div>
+														<div class="select_item">
+															<p>&#8372;/mec</p>
+														</div>
+													</div>
+												</div>
+											</div>
 											<div class="range_slider_wrapp">
 												<div id="range_slider_2"></div>
 											</div>
 											<div class="range_inputs">
-												<div class="col">
-													<div class="input_wrapp inline">
-														<input type="number" placeholder="99999" id="input-number_1"/>
-													</div>
-													<div class="slash inline"></div>
-													<div class="input_wrapp inline">
-														<input type="number" placeholder="99999" id="input-number_2"/>
-													</div>
-													<div class="inline">
-														<div class="custom_select">
-															<input type="text" class="select_input" value="$/кв.m/mec" readonly="readonly" />
-															<div class="dropdown_select">
-																<div class="select_item">
-																	<p>$/кв.m/mec</p>
-																</div>
-																<div class="select_item">
-																	<p>$/mec</p>
-																</div>
-																<div class="select_item">
-																	<p>&#8372;/кв.m/mec</p>
-																</div>
-																<div class="select_item">
-																	<p>&#8372;/mec</p>
-																</div>
-															</div>
-														</div>
-													</div>
+												<div class="input_wrapp inline">
+													<input type="number" placeholder="99999" id="input-number_1"/>
+												</div>
+												<div class="slash inline"></div>
+												<div class="input_wrapp inline">
+													<input type="number" placeholder="99999" id="input-number_2"/>
 												</div>
 											</div>
 											<div class="footer_two_cols clearfix">
