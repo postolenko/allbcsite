@@ -26,6 +26,32 @@ function getAdaptivePositionElements() {
     });
 }
 
+function getAdaptivePositionElements() {
+  if($(".bars").length > 0) {
+    $(".bars").each(function() {
+      var heightArr = [];
+      bar = $(this).find(".bar");
+      barsLength = bar.length;
+      bar.each(function() {
+        heightVal = parseInt($(this).attr("data-count-val"));
+        heightArr.push(heightVal);
+
+      });
+      maxHeight = Math.max.apply(null, heightArr);
+      chartHeight = $(this).height();
+      chartWidth = $(this).width();
+      heightModul = chartHeight/maxHeight;      
+      bar.each(function() {
+        heightVal = parseInt($(this).attr("data-count-val"));
+        $(this).css({
+          "height" : ( heightVal * heightModul ) + "px",
+          "width" : chartWidth / barsLength + "px"
+        });
+      });
+    });
+  }
+}
+
 var w = window,
 d = document,
 e = d.documentElement,
@@ -36,6 +62,14 @@ var parentBlock;
 var HEIGHTCONST;
 var screenParam;
 var indexElem;
+
+var bar,
+    heightVal,
+    chartHeight,
+    chartWidth,
+    heightModul,
+    maxHeight,
+    barsLength;
 
 
 $(window).resize(function() {
@@ -542,9 +576,12 @@ $(document).ready(function() {
             dropdowmMenu.slideDown(300);
             parentBlock.addClass("active");
             parentBlock.closest(".item_wrapp").addClass("z_top");
+            $("#map_box").addClass("mask");
+            getAdaptivePositionElements();
         } else {
             dropdowmMenu.slideUp(300);
             parentBlock.removeClass("active");
+            $("#map_box").removeClass("mask");
         }
     });
 
@@ -553,6 +590,7 @@ $(document).ready(function() {
             $(".dropdown_item_menu").slideUp(300);
             setTimeout(function() {
                 $(".dropdow_item_wrapp").removeClass("active");
+                $("#map_box").removeClass("mask");
             }, 400);
         }
     });
@@ -569,6 +607,7 @@ $(document).ready(function() {
                     }
                 });
             }, 400);
+            $("#map_box").removeClass("mask");
         }
     });
 

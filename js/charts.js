@@ -1,4 +1,6 @@
 window.onload = function() {
+
+
   if($(".chart").length) {
 
     function chart(data) {
