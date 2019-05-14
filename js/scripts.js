@@ -26,30 +26,61 @@ function getAdaptivePositionElements() {
     });
 }
 
-function getAdaptivePositionElements() {
+function getBarsChart() {
   if($(".bars").length > 0) {
     $(".bars").each(function() {
-      var heightArr = [];
-      bar = $(this).find(".bar");
-      barsLength = bar.length;
-      bar.each(function() {
-        heightVal = parseInt($(this).attr("data-count-val"));
-        heightArr.push(heightVal);
+        if( $(this).is(":visible") ) {
+              var heightArr = [];
+              bar = $(this).find(".bar");
+              barsLength = bar.length;
+              bar.each(function() {
+                heightVal = parseInt($(this).attr("data-count-val"));
+                heightArr.push(heightVal);
+              });
+              maxHeight = Math.max.apply(null, heightArr);
+              chartHeight = $(this).height();
+              chartWidth = $(this).width();
+              heightModul = chartHeight/maxHeight;      
+              bar.each(function() {
+                heightVal = parseInt($(this).attr("data-count-val"));
+                $(this).css({
+                  "height" : ( heightVal * heightModul ) + "px",
+                  "width" : chartWidth / barsLength + "px"
+                });
+              });
 
-      });
-      maxHeight = Math.max.apply(null, heightArr);
-      chartHeight = $(this).height();
-      chartWidth = $(this).width();
-      heightModul = chartHeight/maxHeight;      
-      bar.each(function() {
-        heightVal = parseInt($(this).attr("data-count-val"));
-        $(this).css({
-          "height" : ( heightVal * heightModul ) + "px",
-          "width" : chartWidth / barsLength + "px"
-        });
-      });
-    });
-  }
+                barsCharts = $(this).closest(".bars_range_wrapp");
+                handleLower = barsCharts.find(".noUi-handle-lower");
+                handleUpperr = barsCharts.find(".noUi-handle-upper");
+                leftCoord = handleLower.offset().left;
+                rightCoord = handleUpperr.offset().left;        
+                $(this).find(".bar").each(function() {
+                if( $(this).offset().left > leftCoord && $(this).offset().left < rightCoord ) {
+                    $(this).removeClass("disable");
+                } else {
+                    $(this).addClass("disable");
+                }
+                });
+
+            }
+        });    
+    }
+}
+
+function getMapParams() {
+    if( $(".map_scroll").length > 0)  {
+        var eTop = $(".map_scroll").offset().top;
+        var eTopWindow = eTop - $(window).scrollTop();
+        // console.log(eTopWindow);
+        if(eTopWindow <= 0) {            
+            $(".map_scroll").css({
+                "top" : eTopWindow * (-1) + "px"
+            });
+            // $(".map_scroll").removeClass("fixed");
+        } else {
+            // $(".map_scroll").addClass("fixed");
+        }
+    }
 }
 
 var w = window,
@@ -71,22 +102,37 @@ var bar,
     maxHeight,
     barsLength;
 
+var minVal,
+    maxVal,
+    leftRange,
+    rightRange,
+    leftCoord,
+    rightCoord,
+    values,
+    handleLower,
+    handleUpperr;
+
 
 $(window).resize(function() {
 
     bodyWidth = w.innerWidth || e.clientWidth || g.clientWidth;
     getAdaptivePositionElements();
     getHeaderParams();
+    getMapParams();
+    getBarsChart();
 
 });
 
 $(document).scroll(function() {
     getHeaderParams();
+    getMapParams();
 });
 
 $(document).ready(function() {
     getHeaderParams();
-    getAdaptivePositionElements(); 
+    getAdaptivePositionElements();
+    getMapParams();
+    getBarsChart();
 
     $(".top_menu").each(function() {
         $(this).find(".main_nav > li ul").each(function() {
@@ -577,7 +623,7 @@ $(document).ready(function() {
             parentBlock.addClass("active");
             parentBlock.closest(".item_wrapp").addClass("z_top");
             $("#map_box").addClass("mask");
-            getAdaptivePositionElements();
+            getBarsChart();
         } else {
             dropdowmMenu.slideUp(300);
             parentBlock.removeClass("active");
@@ -658,10 +704,6 @@ $(document).ready(function() {
 
     // Range Slider
 
-    var leftRange;
-    var rightRange;
-    var values;
-
     if( document.getElementById("range_slider_2") ) {
         priceSlider2 = document.getElementById("range_slider_2");
         noUiSlider.create(priceSlider2, {
@@ -673,20 +715,29 @@ $(document).ready(function() {
           connect: true,
             format: wNumb({
                 decimals: 0
-            }),
-            pips: {
-                mode: 'steps',
-                stepped: true,
-                density: 4
-            }
+            })
         });
         priceSlider2.noUiSlider.on('update', function( values, handle ) {
-            $("#input-number_3").text(parseInt( values[0] ) );
-            $("#input-number_4").text(parseInt( values[1] ) );
-            $("#input-number_1").attr("value",  parseInt( values[0] ) );
-            $("#input-number_2").attr("value",  parseInt( values[1] ) );
-            leftRange = parseInt( values[0] );
-            rightRange = parseInt( values[1] );
+            minVal = parseInt( values[0] );
+            maxVal = parseInt( values[1] );
+            $("#input-number_3").text(minVal);
+            $("#input-number_4").text(maxVal);
+            $("#input-number_1").attr("value",minVal);
+            $("#input-number_2").attr("value",maxVal);
+            leftRange = maxVal;
+            rightRange = maxVal;
+            handleLower = $("#range_slider_2").find(".noUi-handle-lower");
+            handleUpperr = $("#range_slider_2").find(".noUi-handle-upper");
+            leftCoord = handleLower.offset().left;
+            rightCoord = handleUpperr.offset().left;
+            barsCharts = handleLower.closest(".bars_range_wrapp");
+            barsCharts.find(".bars .bar").each(function() {
+                if( $(this).offset().left > leftCoord && $(this).offset().left < rightCoord ) {
+                    $(this).removeClass("disable");
+                } else {
+                    $(this).addClass("disable");
+                }
+            });
         });
         $("#input-number_1").keyup(function() {
             activeInputVal = parseInt( $(this).val() );
@@ -712,7 +763,7 @@ $(document).ready(function() {
               'min': [ 0 ],
               'max': [ 100000 ]
           },
-          connect: true,
+          connect: [true, false],
           tooltips: true,
             format: wNumb({
                 decimals: 0
@@ -731,20 +782,27 @@ $(document).ready(function() {
           connect: true,
             format: wNumb({
                 decimals: 0
-            }),
-            pips: {
-                mode: 'steps',
-                stepped: true,
-                density: 4
-            }
+            })
         });
         inputNumberMin = document.getElementById("input-number_5");
         inputNumberMax = document.getElementById("input-number_6");
         priceSlider4.noUiSlider.on('update', function( values, handle ) {
-          $("#input-number_5").attr("value",  parseInt( values[0] ) );
-          $("#input-number_6").attr("value",  parseInt( values[1] ) );
-          leftRange = parseInt( values[0] );
-          rightRange = parseInt( values[1] );
+            minVal = parseInt( values[0] );
+            maxVal = parseInt( values[1] );
+            $("#input-number_5").attr("value",minVal);
+            $("#input-number_6").attr("value",maxVal);
+            handleLower = $("#range_slider_4").find(".noUi-handle-lower");
+            handleUpperr = $("#range_slider_4").find(".noUi-handle-upper");
+            leftCoord = handleLower.offset().left;
+            rightCoord = handleUpperr.offset().left;
+            barsCharts = handleLower.closest(".bars_range_wrapp");
+            barsCharts.find(".bars .bar").each(function() {
+                if( $(this).offset().left > leftCoord && $(this).offset().left < rightCoord ) {
+                    $(this).removeClass("disable");
+                } else {
+                    $(this).addClass("disable");
+                }
+            });
         });
         $("#input-number_5").keyup(function() {
             activeInputVal = parseInt( $(this).val() );
