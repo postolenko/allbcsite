@@ -83,6 +83,18 @@ function getMapParams() {
     }
 }
 
+// function getRespFilterParams() {
+//     if($(".filters").length > 0) {
+//         var rightFlagCoord = $(".resp_coord").offset().left;
+//         $(".filters").find(".item_wrapp").each(function() {
+//             var rightCoordFilter = $(this).offset().left + $(this).width();            
+//             if(rightCoordFilter >= rightFlagCoord - 100) {
+//                 $(this).appendTo(".fiter_resp");
+//             }
+//         });
+//     }
+// }
+
 var w = window,
 d = document,
 e = d.documentElement,
@@ -120,6 +132,7 @@ $(window).resize(function() {
     getHeaderParams();
     getMapParams();
     getBarsChart();
+    // getRespFilterParams();
 
 });
 
@@ -133,6 +146,7 @@ $(document).ready(function() {
     getAdaptivePositionElements();
     getMapParams();
     getBarsChart();
+    // getRespFilterParams();
 
     $(".top_menu").each(function() {
         $(this).find(".main_nav > li ul").each(function() {
@@ -720,8 +734,8 @@ $(document).ready(function() {
         priceSlider2.noUiSlider.on('update', function( values, handle ) {
             minVal = parseInt( values[0] );
             maxVal = parseInt( values[1] );
-            $("#input-number_3").text(minVal);
-            $("#input-number_4").text(maxVal);
+            // $("#input-number_3").text(minVal);
+            // $("#input-number_4").text(maxVal);
             $("#input-number_1").attr("value",minVal);
             $("#input-number_2").attr("value",maxVal);
             leftRange = maxVal;
