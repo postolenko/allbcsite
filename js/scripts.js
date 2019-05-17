@@ -83,6 +83,33 @@ function getMapParams() {
     }
 }
 
+function getfilterNavParams() {
+    if($("#filters").length > 0) {
+        $(".filter_resp").css({"height" : "auto"});
+        if($(window).scrollTop() > $("#filters").offset().top ) {
+            $(".filter_nav").addClass("fixed");
+            $("#filters").height($(".filter_nav").height());
+            $(".filter_resp").css({
+                "height" : $(window).height() - $("#filters").height() + "px"
+            });
+        } else {
+            $(".filter_nav").removeClass("fixed");
+            $("#filters").height(false);            
+            $(".filter_resp").css({
+                "height" : $(window).height() - $("#filters").height() - $(".header_site_inner").height() + "px"
+            });
+        }
+    }
+}
+
+// function getRespFilterParams() {
+//     var topCoord = $(".filter_resp").offset().top;
+//     $(".filter_resp").css({
+//         "height" : $(window).height() + $(".items_sect").height() - topCoord
+//     });
+//     console.log($(".filter_resp").offset().top);
+// }
+
 // function getRespFilterParams() {
 //     if($(".filters").length > 0) {
 //         var rightFlagCoord = $(".resp_coord").offset().left;
@@ -132,6 +159,8 @@ $(window).resize(function() {
     getHeaderParams();
     getMapParams();
     getBarsChart();
+    getfilterNavParams();
+    // getRespFilterParams();
     // getRespFilterParams();
 
 });
@@ -139,6 +168,7 @@ $(window).resize(function() {
 $(document).scroll(function() {
     getHeaderParams();
     getMapParams();
+    getfilterNavParams();
 });
 
 $(document).ready(function() {
@@ -146,6 +176,7 @@ $(document).ready(function() {
     getAdaptivePositionElements();
     getMapParams();
     getBarsChart();
+    getfilterNavParams();
     // getRespFilterParams();
 
     $(".top_menu").each(function() {
@@ -636,12 +667,17 @@ $(document).ready(function() {
             dropdowmMenu.slideDown(300);
             parentBlock.addClass("active");
             parentBlock.closest(".item_wrapp").addClass("z_top");
-            $("#map_box").addClass("mask");
+            $("#map_box .mask").addClass("visible");
             getBarsChart();
+            if(parentBlock.closest(".items_sect").length > 0 &&
+                $(".filter_resp").is(":visible") ) {
+                $(".filter_resp").fadeOut(300);
+                $(".more_filter").removeClass("active");
+            }
         } else {
             dropdowmMenu.slideUp(300);
             parentBlock.removeClass("active");
-            $("#map_box").removeClass("mask");
+            $("#map_box .mask").removeClass("visible");
         }
     });
 
@@ -650,9 +686,18 @@ $(document).ready(function() {
             $(".dropdown_item_menu").slideUp(300);
             setTimeout(function() {
                 $(".dropdow_item_wrapp").removeClass("active");
-                $("#map_box").removeClass("mask");
+                $("#map_box .mask").removeClass("visible");
             }, 400);
         }
+    });
+
+    $("#map_box .mask").on("click", function(e) {
+        e.preventDefault();
+        $(".dropdown_item_menu").slideUp(300);
+        setTimeout(function() {
+            $(".dropdow_item_wrapp").removeClass("active");
+            $(this).removeClass("visible");
+        }, 400);
     });
 
     $(document).mouseup(function(e) {
@@ -667,7 +712,7 @@ $(document).ready(function() {
                     }
                 });
             }, 400);
-            $("#map_box").removeClass("mask");
+            $("#map_box .mask").removeClass("visible");
         }
     });
 
@@ -712,8 +757,9 @@ $(document).ready(function() {
         e.preventDefault();
         var itemText = $(this).text();
         parentBlock = $(this).closest(".custom_select");
-        var inputVal = parentBlock.find(".select_input");
-        inputVal.val(itemText);
+        var inputVal = parentBlock.find(".select_input .sel_val");
+        parentBlock.find(".select_res").val(itemText);
+        inputVal.html(itemText);
     });
 
     // Range Slider
@@ -736,9 +782,9 @@ $(document).ready(function() {
             maxVal = parseInt( values[1] );
             // $("#input-number_3").text(minVal);
             // $("#input-number_4").text(maxVal);
-            $("#input-number_1").attr("value",minVal);
-            $("#input-number_2").attr("value",maxVal);
-            leftRange = maxVal;
+            $("#input-number_1").val(minVal);
+            $("#input-number_2").val(maxVal);
+            leftRange = minVal;
             rightRange = maxVal;
             handleLower = $("#range_slider_2").find(".noUi-handle-lower");
             handleUpperr = $("#range_slider_2").find(".noUi-handle-upper");
@@ -752,6 +798,22 @@ $(document).ready(function() {
                     $(this).addClass("disable");
                 }
             });
+        });
+        priceSlider2.noUiSlider.on('set', function( values, handle ) {
+            setTimeout(function() {           
+                handleLower = $("#range_slider_2").find(".noUi-handle-lower");
+                handleUpperr = $("#range_slider_2").find(".noUi-handle-upper");
+                leftCoord = handleLower.offset().left;
+                rightCoord = handleUpperr.offset().left;
+                barsCharts = handleLower.closest(".bars_range_wrapp");
+                barsCharts.find(".bars .bar").each(function() {
+                    if( $(this).offset().left > leftCoord && $(this).offset().left < rightCoord ) {
+                        $(this).removeClass("disable");
+                    } else {
+                        $(this).addClass("disable");
+                    }
+                });
+            }, 500);
         });
         $("#input-number_1").keyup(function() {
             activeInputVal = parseInt( $(this).val() );
@@ -800,11 +862,14 @@ $(document).ready(function() {
         });
         inputNumberMin = document.getElementById("input-number_5");
         inputNumberMax = document.getElementById("input-number_6");
+
         priceSlider4.noUiSlider.on('update', function( values, handle ) {
             minVal = parseInt( values[0] );
             maxVal = parseInt( values[1] );
-            $("#input-number_5").attr("value",minVal);
-            $("#input-number_6").attr("value",maxVal);
+            leftRange = maxVal;
+            rightRange = maxVal;
+            $("#input-number_5").val(minVal);
+            $("#input-number_6").val(maxVal);
             handleLower = $("#range_slider_4").find(".noUi-handle-lower");
             handleUpperr = $("#range_slider_4").find(".noUi-handle-upper");
             leftCoord = handleLower.offset().left;
@@ -818,21 +883,51 @@ $(document).ready(function() {
                 }
             });
         });
+
+        priceSlider4.noUiSlider.on('set', function( values, handle ) {
+            setTimeout(function() { 
+                handleLower = $("#range_slider_4").find(".noUi-handle-lower");
+                handleUpperr = $("#range_slider_4").find(".noUi-handle-upper");
+                leftCoord = handleLower.offset().left;
+                rightCoord = handleUpperr.offset().left;
+                barsCharts = handleLower.closest(".bars_range_wrapp");
+                barsCharts.find(".bars .bar").each(function() {
+                    if( $(this).offset().left > leftCoord && $(this).offset().left < rightCoord ) {
+                        $(this).removeClass("disable");
+                    } else {
+                        $(this).addClass("disable");
+                    }
+                });
+            }, 500);
+        });
+
         $("#input-number_5").keyup(function() {
             activeInputVal = parseInt( $(this).val() );
             if( activeInputVal < parseInt( $("#input-number_6").val() ) ) {
                 leftRange = parseInt( $(this).val() );
-                priceSlider.noUiSlider.set([leftRange, null]);
+                priceSlider4.noUiSlider.set([leftRange, null]);
             }
         });
         $("#input-number_6").keyup(function() {
           activeInputVal = parseInt( $(this).val() );
           if( activeInputVal > parseInt( $("#input-number_5").val() ) ) {
               rightRange = parseInt( $(this).val() );
-              priceSlider.noUiSlider.set([null, rightRange]);
+              priceSlider4.noUiSlider.set([null, rightRange]);
           }
         });
     }
 
+    $(".more_filter").on('click', function(e) {
+        e.preventDefault();
+        if( $(".filter_resp").is(":hidden") ) {
+            $(".filter_resp").fadeIn(300);
+            $(this).addClass("active");
+            $(".mask_2").fadeIn(300);
+        } else {
+            $(".filter_resp").fadeOut(300);
+            $(this).removeClass("active");
+            $(".mask_2").fadeOut(300);
+        }
+    });
 
 });
