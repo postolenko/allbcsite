@@ -858,6 +858,18 @@
 		line-height: 18px;
 	}
 
+	.filter_resp .range_inputs .input_wrapp {
+		width: calc(50% - 15px);
+	}
+
+	.filter_resp .input_wrapp input {
+	    width: 100%;
+	}
+
+	.resp_filter_wrapp .bars_range_wrapp {
+	    max-width: 100%;
+	}
+
 	/*-- /Section 1 - Info Side Page --*/
 
 }
@@ -911,6 +923,10 @@
 	/*-- Section 1 - Info Side Page --*/
 
 	.filter_resp {
+		display: none !important;
+	}
+
+	.mask_2 {
 		display: none !important;
 	}
 

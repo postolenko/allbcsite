@@ -23,47 +23,49 @@ function getAdaptivePositionElements() {
          if( bodyWidth > screenParam ) {
             $("[data-append-desktop-elem = '"+ indexElem +"']").append($("[data-append-elem = '"+ indexElem +"']").children());
         }
+        // setTimeout(function() {
+        //     getBarsChart();
+        //     console.log("chart");
+        // }, 3000);        
     });
 }
 
 function getBarsChart() {
-  if($(".bars").length > 0) {
-    $(".bars").each(function() {
-        if( $(this).is(":visible") ) {
-              var heightArr = [];
-              bar = $(this).find(".bar");
-              barsLength = bar.length;
-              bar.each(function() {
-                heightVal = parseInt($(this).attr("data-count-val"));
-                heightArr.push(heightVal);
-              });
-              maxHeight = Math.max.apply(null, heightArr);
-              chartHeight = $(this).height();
-              chartWidth = $(this).width();
-              heightModul = chartHeight/maxHeight;      
-              bar.each(function() {
-                heightVal = parseInt($(this).attr("data-count-val"));
-                $(this).css({
-                  "height" : ( heightVal * heightModul ) + "px",
-                  "width" : chartWidth / barsLength + "px"
+    if($(".bars").length > 0) {
+        $(".bars").each(function() {
+            if( $(this).is(":visible") ) {
+                var heightArr = [];
+                bar = $(this).find(".bar");
+                barsLength = bar.length;
+                bar.each(function() {
+                    heightVal = parseInt($(this).attr("data-count-val"));
+                    heightArr.push(heightVal);
                 });
-              });
-
+                maxHeight = Math.max.apply(null, heightArr);
+                chartHeight = $(this).height();
+                chartWidth = $(this).width();
+                heightModul = chartHeight/maxHeight;      
+                bar.each(function() {
+                    heightVal = parseInt($(this).attr("data-count-val"));
+                    $(this).css({
+                        "height" : ( heightVal * heightModul ) + "px",
+                        "width" : chartWidth / barsLength + "px"
+                    });
+                });
                 barsCharts = $(this).closest(".bars_range_wrapp");
                 handleLower = barsCharts.find(".noUi-handle-lower");
                 handleUpperr = barsCharts.find(".noUi-handle-upper");
                 leftCoord = handleLower.offset().left;
                 rightCoord = handleUpperr.offset().left;        
                 $(this).find(".bar").each(function() {
-                if( $(this).offset().left > leftCoord && $(this).offset().left < rightCoord ) {
-                    $(this).removeClass("disable");
-                } else {
-                    $(this).addClass("disable");
-                }
+                    if( $(this).offset().left > leftCoord && $(this).offset().left < rightCoord ) {
+                        $(this).removeClass("disable");
+                    } else {
+                        $(this).addClass("disable");
+                    }
                 });
-
             }
-        });    
+        });
     }
 }
 
@@ -673,6 +675,7 @@ $(document).ready(function() {
                 $(".filter_resp").is(":visible") ) {
                 $(".filter_resp").fadeOut(300);
                 $(".more_filter").removeClass("active");
+                $(".mask_2").fadeOut(300);
             }
         } else {
             dropdowmMenu.slideUp(300);
@@ -923,6 +926,7 @@ $(document).ready(function() {
             $(".filter_resp").fadeIn(300);
             $(this).addClass("active");
             $(".mask_2").fadeIn(300);
+            getBarsChart();
         } else {
             $(".filter_resp").fadeOut(300);
             $(this).removeClass("active");
