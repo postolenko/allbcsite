@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="icon" type="image/png" href="favicon/favicon.ico" sizes="16x16">
 	<title>Allbc</title>
-	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+<!-- 	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> -->
 </head>
 
 <body>
@@ -20,8 +20,8 @@
 	<!-- Header - Inner -->
 		
 	<header>
-		<div class="header_site header_site_inner">
-			<div class="header_1">
+		<div class="header_site header_site_inner header_1">
+			<!-- <div class="header_1"> -->
 				<div class="row clearfix">
 					<div class="left">
 						<div class="logo_wrapp logo_wrapp_2">
@@ -105,7 +105,7 @@
 						</button>
 					</div>
 				</div>
-			</div>
+			<!-- </div> -->
 			<div class="search_popup">
 				<form class="search_form" method="post">					
 					<input type="text" placeholder="Что ищем" class="search_input" />
@@ -164,13 +164,13 @@
 											</div>
 										</div>
 									</div>
-									<div class="item_wrapp novisible_767">
+									<div class="item_wrapp novisible_1024">
 										<div class="dropdow_item_wrapp">
 											<div class="dropdown_item_title green_active">
 												<div class="item_title_text">Площадь</div>
 											</div>
 											<div class="dropdown_item_menu price_w">
-												<div class="append-elem" data-append-desktop-elem = "6" data-min-screen = "767">
+												<div class="append-elem" data-append-desktop-elem = "6" data-min-screen = "1024">
 													<h4>Площадь офиса, <span class="val_p">м²</span></h4>
 													<div class="bars_range_wrapp">
 														<div class="bars">
@@ -232,21 +232,15 @@
 											</div>
 										</div>
 									</div>
-									<div class="item_wrapp novisible_767">
+									<div class="item_wrapp novisible_1024">
 										<div class="dropdow_item_wrapp">
 											<div class="dropdown_item_title dropdown_item_title_2">
 												<div class="item_title_text">
-													<!-- <div class="range_2_wrapp">
-														<div id="input-number_3" class="inline"></div>
-														<div class="inline">-</div>
-														<div id="input-number_4" class="inline"></div>
-														<div class="inline">грн.</div>
-													</div> -->
 													<p>$ 1400 - 5000</p>
 												</div>
 											</div>
 											<div class="dropdown_item_menu price_w">
-												<div class="append-elem" data-append-desktop-elem = "7" data-min-screen = "767">
+												<div class="append-elem" data-append-desktop-elem = "7" data-min-screen = "1024">
 													<div class="metro_two_cols metro_two_cols_2">
 														<div class="col">
 															<h4>Арендная ставка,</h4>
@@ -334,42 +328,113 @@
 											</div>
 										</div>
 									</div>
-									<div class="item_wrapp novisible_1040">
-										<div class="dropdow_item_wrapp">
+									<div class="item_wrapp">
+										<button type="button" class="more_filter"><span class="novisible_767">Еще фильтры</span><span class="visible_767">Фильтры</span></button>
+									</div>
+									<div class="item_wrapp append-elem novisible_767" data-append-desktop-elem = "8" data-min-screen = "767">
+										<a href="#" class="green_pill green_pill_2">Подписаться на обновления</a>
+									</div>
+								</div>
+								<div class="right">
+									<div class="item_wrapp">
+										<div class="map_checkbox">
+											<input type="checkbox" name="map_ch" id="ch_2" />
+											<label for="ch_2">На карте</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="filter_top_coord"></div>
+							<div class="filter_resp_wrapp" id="filters_menu">
+								<div class="top_box">
+									<button type="button" class="close_filters"></button>
+								</div>
+								<div class="filter_resp">
+									<div class="resp_filter_wrapp visible_767">
+										<div class="green_pills_wrapp">
+											<div class="pill_checlbox_2">
+												<input type="radio" name="pill_checkboxes" id="pill_ch_3"/>
+												<label for="pill_ch_3">Аренда</label>
+											</div>
+											<div class="pill_checlbox_2">
+												<input type="radio" name="pill_checkboxes" id="pill_ch_4" checked="checked">
+												<label for="pill_ch_4">Прродажа</label>
+											</div>
+										</div>
+									</div>
+									<div class="resp_filter_wrapp visible_767">
+										<div class="append-elem" data-append-elem = "8"></div>
+									</div>
+									<div class="resp_filter_wrapp filter_wrapp">
+										<div class="col">
+											<p>Выводить:</p>
+										</div>
+										<div class="col">
+											<div class="checkboxes_wrapp">
+												<div class="pill_checlbox">
+													<input type="radio" name="pill_checkboxes" id="pill_ch_1" checked/>
+													<label for="pill_ch_1">Офисы</label>
+												</div>
+												<div class="pill_checlbox">
+													<input type="radio" name="pill_checkboxes" id="pill_ch_2" />
+													<label for="pill_ch_2">Бизнес-Центры</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="resp_filter_wrapp visible_1024">
+										<div class="dropdow_item_wrapp resp">
+											<div class="dropdown_item_title">
+												<div class="item_title_text">Площадь</div>
+											</div>
+											<div class="dropdown_item_menu dropdown_item_menu_4">
+												<div class="append-elem" data-append-elem = "6"></div>
+											</div>
+										</div>
+									</div>
+									<div class="resp_filter_wrapp visible_1024">
+										<div class="dropdow_item_wrapp resp">
+											<div class="dropdown_item_title">
+												<div class="item_title_text">Ценовой диапазон</div>
+											</div>
+											<div class="dropdown_item_menu dropdown_item_menu_4">
+												<div class="append-elem" data-append-elem = "7"></div>
+											</div>
+										</div>
+									</div>								
+									<div class="resp_filter_wrapp">
+										<div class="dropdow_item_wrapp resp">
 											<div class="dropdown_item_title">
 												<div class="item_title_text">Район</div>
 											</div>
 											<div class="dropdown_item_menu dropdown_item_menu_4">
 												<div class="checkbox_wrapp">
 													<div class="checkbox">
-														<input type="checkbox" name="filter_ch" id="ch_12">
-														<label for="ch_12">Район 1</label>
+														<input type="checkbox" name="filter_ch" id="ch_18">
+														<label for="ch_18">Район 1</label>
 													</div>
 												</div>
 												<div class="checkbox_wrapp">
 													<div class="checkbox">
-														<input type="checkbox" name="filter_ch" id="ch_13">
-														<label for="ch_13">Район 2</label>
+														<input type="checkbox" name="filter_ch" id="ch_19">
+														<label for="ch_19">Район 2</label>
 													</div>
 												</div>
 												<div class="checkbox_wrapp">
 													<div class="checkbox">
-														<input type="checkbox" name="filter_ch" id="ch_14">
-														<label for="ch_14">Район 3</label>
+														<input type="checkbox" name="filter_ch" id="ch_20">
+														<label for="ch_20">Район 3</label>
 													</div>
-												</div>
-												<div class="footer_two_cols footer_two_cols_3">
-													<p><a href="#" class="green_link">Применить</a></p>
 												</div>
 											</div>
 										</div>
 									</div>
-									<div class="item_wrapp novisible_1040">
-										<div class="dropdow_item_wrapp">
-											<div class="dropdown_item_title green_active">
+									<div class="resp_filter_wrapp">
+										<div class="dropdow_item_wrapp resp">
+											<div class="dropdown_item_title">
 												<div class="item_title_text">Метро</div>
 											</div>
-											<div class="dropdown_item_menu w_3">
+											<div class="dropdown_item_menu dropdown_item_menu_4">
 												<div class="metro_box">
 													<div class="metro_two_cols">
 														<div class="col">
@@ -403,328 +468,139 @@
 															</div>
 														</div>
 													</div>
-													<div class="footer_two_cols footer_two_cols_3">
-														<p><a href="#" class="green_link">Применить</a></p>
-													</div>
+												</div>
+												<div class="select_4_wrapp select_4_2">
+													<select data-placeholder="Метро">
+														<option></option>
+														<option>Option 1</option>
+														<option>Option 2</option>
+														<option>Option 3</option>
+														<option>Option 4</option>
+													</select>
 												</div>
 											</div>
 										</div>
 									</div>
-									<div class="item_wrapp novisible_1380">
-										<div class="dropdow_item_wrapp">
+									<div class="resp_filter_wrapp">
+										<div class="dropdow_item_wrapp resp">
 											<div class="dropdown_item_title">
 												<div class="item_title_text">Тип/Класс</div>
 											</div>
 											<div class="dropdown_item_menu dropdown_item_menu_4">
 												<div class="checkbox_wrapp">
 													<div class="checkbox">
-														<input type="checkbox" name="filter_ch" id="ch_3">
-														<label for="ch_3">БЦ класса А</label>
+														<input type="checkbox" name="filter_ch" id="ch_3_2">
+														<label for="ch_3_2">БЦ класса А</label>
 													</div>
 												</div>
 												<div class="checkbox_wrapp">
 													<div class="checkbox">
-														<input type="checkbox" name="filter_ch" id="ch_4">
-														<label for="ch_4">БЦ класса В</label>
+														<input type="checkbox" name="filter_ch" id="ch_4_2">
+														<label for="ch_4_2">БЦ класса В</label>
 													</div>
 												</div>
 												<div class="checkbox_wrapp">
 													<div class="checkbox">
-														<input type="checkbox" name="filter_ch" id="ch_5">
-														<label for="ch_5">БЦ класса С</label>
+														<input type="checkbox" name="filter_ch" id="ch_5_2">
+														<label for="ch_5_2">БЦ класса С</label>
 													</div>
 												</div>
 												<div class="checkbox_wrapp">
 													<div class="checkbox">
-														<input type="checkbox" name="filter_ch" id="ch_6">
-														<label for="ch_6">Админ. здание </label>
+														<input type="checkbox" name="filter_ch" id="ch_6_2">
+														<label for="ch_6_2">Админ. здание </label>
 													</div>
 												</div>
 												<div class="checkbox_wrapp">
 													<div class="checkbox">
-														<input type="checkbox" name="filter_ch" id="ch_7">
-														<label for="ch_7">ОСЗ/Особняк </label>
+														<input type="checkbox" name="filter_ch" id="ch_7_2">
+														<label for="ch_7_2">ОСЗ/Особняк </label>
 													</div>
 												</div>
 												<div class="checkbox_wrapp">
 													<div class="checkbox">
-														<input type="checkbox" name="filter_ch" id="ch_8">
-														<label for="ch_8">Coworking</label>
+														<input type="checkbox" name="filter_ch" id="ch_8_2">
+														<label for="ch_8_2">Coworking</label>
 													</div>
 												</div>
 												<div class="checkbox_wrapp">
 													<div class="checkbox">
-														<input type="checkbox" name="filter_ch" id="ch_9">
-														<label for="ch_9">Бизнес-парк </label>
+														<input type="checkbox" name="filter_ch" id="ch_9_2">
+														<label for="ch_9_2">Бизнес-парк </label>
 													</div>
 												</div>
 												<div class="checkbox_wrapp">
 													<div class="checkbox">
-														<input type="checkbox" name="filter_ch" id="ch_10">
-														<label for="ch_10">Технопарк </label>
+														<input type="checkbox" name="filter_ch" id="ch_10_2">
+														<label for="ch_10_2">Технопарк </label>
 													</div>
 												</div>
 												<div class="checkbox_wrapp">
 													<div class="checkbox">
-														<input type="checkbox" name="filter_ch" id="ch_11">
-														<label for="ch_11">Офис в ЖК</label>
+														<input type="checkbox" name="filter_ch" id="ch_11_2">
+														<label for="ch_11_2">Офис в ЖК</label>
 													</div>
 												</div>
-												<div class="footer_two_cols footer_two_cols_3">
-													<p><a href="#" class="green_link">Применить</a></p>
-												</div>
-											</div>										
+											</div>
 										</div>
 									</div>
-									<div class="item_wrapp novisible_1380">
-										<div class="dropdow_item_wrapp">
+									<div class="resp_filter_wrapp">
+										<div class="dropdow_item_wrapp resp">
 											<div class="dropdown_item_title">
 												<div class="item_title_text">Состояние</div>
 											</div>
 											<div class="dropdown_item_menu dropdown_item_menu_4">
 												<div class="checkbox_wrapp">
 													<div class="checkbox">
-														<input type="checkbox" name="filter_ch" id="ch_15">
-														<label for="ch_15">Состояние 1</label>
+														<input type="checkbox" name="filter_ch" id="ch_15_2">
+														<label for="ch_15_2">Состояние 1</label>
 													</div>
 												</div>
 												<div class="checkbox_wrapp">
 													<div class="checkbox">
-														<input type="checkbox" name="filter_ch" id="ch_16">
-														<label for="ch_16">Состояние 2</label>
+														<input type="checkbox" name="filter_ch" id="ch_16_2">
+														<label for="ch_16_2">Состояние 2</label>
 													</div>
 												</div>
 												<div class="checkbox_wrapp">
 													<div class="checkbox">
-														<input type="checkbox" name="filter_ch" id="ch_17">
-														<label for="ch_17">Состояние 3</label>
+														<input type="checkbox" name="filter_ch" id="ch_17_2">
+														<label for="ch_17_2">Состояние 3</label>
 													</div>
 												</div>
-												<div class="footer_two_cols footer_two_cols_3">
-													<p><a href="#" class="green_link">Применить</a></p>
-												</div>
-											</div>										
+											</div>
 										</div>
 									</div>
-									<div class="item_wrapp novisible_1380">
+									<div class="resp_filter_wrapp">
 										<div class="checkbox">
-											<input type="checkbox" name="filter_ch" id="ch_1" />
-											<label for="ch_1">Без комиссии</label>
+											<input type="checkbox" name="filter_ch" id="ch_1_2" />
+											<label for="ch_1_2">Без комиссии</label>
 										</div>
 									</div>
-									<div class="item_wrapp visible_1380">
-										<button type="button" class="more_filter">Другие фильтры</button>
-									</div>
-								</div>
-								<div class="right">
-									<div class="item_wrapp">
-										<div class="map_checkbox">
-											<input type="checkbox" name="map_ch" id="ch_2" />
-											<label for="ch_2">На карте</label>
+									<div class="footer_two_cols_resp clearfix">
+										<div class="left">
+											<p><a href="#" class="green_link">Применить</a></p>
+										</div>
+										<div class="right">
+											<p><a href="#" class="black_link">Очистить</a></p>
 										</div>
 									</div>
 								</div>
-							</div>
-							<div id="filter_top_coord"></div>
-							<div class="filter_resp">
-								<div class="resp_filter_wrapp visible_767">
-									<div class="green_pills_wrapp">
-										<div class="pill_checlbox_2">
-											<input type="radio" name="pill_checkboxes" id="pill_ch_3"/>
-											<label for="pill_ch_3">Аренда</label>
-										</div>
-										<div class="pill_checlbox_2">
-											<input type="radio" name="pill_checkboxes" id="pill_ch_4" checked="checked">
-											<label for="pill_ch_4">Прродажа</label>
-										</div>
-									</div>
-								</div>
-								<div class="resp_filter_wrapp visible_767">
-									<div class="append-elem" data-append-elem = "6"></div>
-								</div>
-								<div class="resp_filter_wrapp visible_767">
-									<div class="append-elem" data-append-elem = "7"></div>
-								</div>
-								<div class="resp_filter_wrapp visible_1040">
-									<div class="dropdow_item_wrapp resp">
-										<div class="dropdown_item_title">
-											<div class="item_title_text">Район</div>
-										</div>
-										<div class="dropdown_item_menu dropdown_item_menu_4">
-											<div class="checkbox_wrapp">
-												<div class="checkbox">
-													<input type="checkbox" name="filter_ch" id="ch_18">
-													<label for="ch_18">Район 1</label>
-												</div>
-											</div>
-											<div class="checkbox_wrapp">
-												<div class="checkbox">
-													<input type="checkbox" name="filter_ch" id="ch_19">
-													<label for="ch_19">Район 2</label>
-												</div>
-											</div>
-											<div class="checkbox_wrapp">
-												<div class="checkbox">
-													<input type="checkbox" name="filter_ch" id="ch_20">
-													<label for="ch_20">Район 3</label>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="resp_filter_wrapp visible_1040">
-									<h4>Метро</h4>
-									<div class="select_4_wrapp select_4_2">
-										<select data-placeholder="Метро">
-											<option></option>
-											<option>Option 1</option>
-											<option>Option 2</option>
-											<option>Option 3</option>
-											<option>Option 4</option>
-										</select>
-									</div>
-								</div>
-								<div class="resp_filter_wrapp visible_1380">
-									<div class="dropdow_item_wrapp resp">
-										<div class="dropdown_item_title">
-											<div class="item_title_text">Тип/Класс</div>
-										</div>
-										<div class="dropdown_item_menu dropdown_item_menu_4">
-											<div class="checkbox_wrapp">
-												<div class="checkbox">
-													<input type="checkbox" name="filter_ch" id="ch_3_2">
-													<label for="ch_3_2">БЦ класса А</label>
-												</div>
-											</div>
-											<div class="checkbox_wrapp">
-												<div class="checkbox">
-													<input type="checkbox" name="filter_ch" id="ch_4_2">
-													<label for="ch_4_2">БЦ класса В</label>
-												</div>
-											</div>
-											<div class="checkbox_wrapp">
-												<div class="checkbox">
-													<input type="checkbox" name="filter_ch" id="ch_5_2">
-													<label for="ch_5_2">БЦ класса С</label>
-												</div>
-											</div>
-											<div class="checkbox_wrapp">
-												<div class="checkbox">
-													<input type="checkbox" name="filter_ch" id="ch_6_2">
-													<label for="ch_6_2">Админ. здание </label>
-												</div>
-											</div>
-											<div class="checkbox_wrapp">
-												<div class="checkbox">
-													<input type="checkbox" name="filter_ch" id="ch_7_2">
-													<label for="ch_7_2">ОСЗ/Особняк </label>
-												</div>
-											</div>
-											<div class="checkbox_wrapp">
-												<div class="checkbox">
-													<input type="checkbox" name="filter_ch" id="ch_8_2">
-													<label for="ch_8_2">Coworking</label>
-												</div>
-											</div>
-											<div class="checkbox_wrapp">
-												<div class="checkbox">
-													<input type="checkbox" name="filter_ch" id="ch_9_2">
-													<label for="ch_9_2">Бизнес-парк </label>
-												</div>
-											</div>
-											<div class="checkbox_wrapp">
-												<div class="checkbox">
-													<input type="checkbox" name="filter_ch" id="ch_10_2">
-													<label for="ch_10_2">Технопарк </label>
-												</div>
-											</div>
-											<div class="checkbox_wrapp">
-												<div class="checkbox">
-													<input type="checkbox" name="filter_ch" id="ch_11_2">
-													<label for="ch_11_2">Офис в ЖК</label>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="resp_filter_wrapp visible_1380">
-									<div class="dropdow_item_wrapp resp">
-										<div class="dropdown_item_title">
-											<div class="item_title_text">Состояние</div>
-										</div>
-										<div class="dropdown_item_menu dropdown_item_menu_4">
-											<div class="checkbox_wrapp">
-												<div class="checkbox">
-													<input type="checkbox" name="filter_ch" id="ch_15_2">
-													<label for="ch_15_2">Состояние 1</label>
-												</div>
-											</div>
-											<div class="checkbox_wrapp">
-												<div class="checkbox">
-													<input type="checkbox" name="filter_ch" id="ch_16_2">
-													<label for="ch_16_2">Состояние 2</label>
-												</div>
-											</div>
-											<div class="checkbox_wrapp">
-												<div class="checkbox">
-													<input type="checkbox" name="filter_ch" id="ch_17_2">
-													<label for="ch_17_2">Состояние 3</label>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="resp_filter_wrapp visible_1380">
-									<div class="checkbox">
-										<input type="checkbox" name="filter_ch" id="ch_1_2" />
-										<label for="ch_1_2">Без комиссии</label>
-									</div>
-								</div>
-								<div class="footer_two_cols_resp clearfix">
-									<div class="left">
-										<p><a href="#" class="green_link">Применить</a></p>
-									</div>
-									<div class="right">
-										<p><a href="#" class="black_link">Очистить</a></p>
-									</div>
-								</div>
+								<div class="mask_2"></div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="mask_2"></div>
 				<div id="map_box">
 					<div class="mask"></div>
 					<div class="map_object_header">
-						<div class="row clearfix">
-							<div class="left">
-								<h4>Аренда офиса в бизнес-центрах класса А в городе Киеве</h4>
-								<p>Найдено: 24 000 офисов</p>
-							</div>
-							<div class="right">
-								<div class="inlines_wrapp">
-									<div class="inline">
-										<div class="filter_wrapp">
-											<div class="col">
-												<p>Выводить:</p>
-											</div>
-											<div class="col">
-												<div class="checkboxes_wrapp">
-													<div class="pill_checlbox">
-														<input type="radio" name="pill_checkboxes" id="pill_ch_1" checked/>
-														<label for="pill_ch_1">Офисы</label>
-													</div>
-													<div class="pill_checlbox">
-														<input type="radio" name="pill_checkboxes" id="pill_ch_2" />
-														<label for="pill_ch_2">Бизнес-Центры</label>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="inline">
-										<a href="#" class="green_pill green_pill_2">Подписаться на обновления</a>
-									</div>
+						<div class="row">
+							<div class="inlines_wrapp">
+								<div class="inline">
+									<h4>Аренда офиса в бизнес-центрах класса А в городе Киеве</h4>
+								</div>
+								<div class="inline">
+									<p>Найдено: 24 000 офисов</p>
 								</div>
 							</div>
 						</div>
@@ -784,7 +660,7 @@
 													<div class="office_cont_wrapp">
 														<div class="office_cont">
 															<div class="col">
-																<i class="room"></i>
+																<i class="room_2"></i>
 															</div>
 															<div class="col">
 																<h5>24</h5>
@@ -915,7 +791,7 @@
 													<div class="office_cont_wrapp">
 														<div class="office_cont">
 															<div class="col">
-																<i class="room"></i>
+																<i class="room_2"></i>
 															</div>
 															<div class="col">
 																<h5>24</h5>
@@ -1046,7 +922,7 @@
 													<div class="office_cont_wrapp">
 														<div class="office_cont">
 															<div class="col">
-																<i class="room"></i>
+																<i class="room_2"></i>
 															</div>
 															<div class="col">
 																<h5>24</h5>
@@ -1177,7 +1053,7 @@
 													<div class="office_cont_wrapp">
 														<div class="office_cont">
 															<div class="col">
-																<i class="room"></i>
+																<i class="room_2"></i>
 															</div>
 															<div class="col">
 																<h5>24</h5>
@@ -1376,7 +1252,7 @@
 													<div class="office_cont_wrapp">
 														<div class="office_cont">
 															<div class="col">
-																<i class="room"></i>
+																<i class="room_2"></i>
 															</div>
 															<div class="col">
 																<h5>24</h5>
@@ -1507,7 +1383,7 @@
 													<div class="office_cont_wrapp">
 														<div class="office_cont">
 															<div class="col">
-																<i class="room"></i>
+																<i class="room_2"></i>
 															</div>
 															<div class="col">
 																<h5>24</h5>
@@ -1638,7 +1514,7 @@
 													<div class="office_cont_wrapp">
 														<div class="office_cont">
 															<div class="col">
-																<i class="room"></i>
+																<i class="room_2"></i>
 															</div>
 															<div class="col">
 																<h5>24</h5>
@@ -1769,7 +1645,7 @@
 													<div class="office_cont_wrapp">
 														<div class="office_cont">
 															<div class="col">
-																<i class="room"></i>
+																<i class="room_2"></i>
 															</div>
 															<div class="col">
 																<h5>24</h5>
