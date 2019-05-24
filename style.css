@@ -2753,9 +2753,7 @@ textarea:focus {
     max-width: 368px;
     margin: 20px auto;
     background-color: #ffffff;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
+    position: relative;
     -webkit-transition-property: box-shadow;
     -webkit-transition-duration: .3s;
     -webkit-transition-timing-function: ease;
@@ -2775,6 +2773,14 @@ textarea:focus {
     transition-property: box-shadow;
     transition-duration: .3s;
     transition-timing-function: ease;
+
+/*    border-width: 3px;
+    border-style: solid;
+    border-color: transparent;
+
+    border-image: -webkit-linear-gradient(45deg, #3eb060, #0cabe1) 1 49%;
+    border-image: -moz-linear-gradient(45deg, #3eb060, #0cabe1) 1 49%;
+    border-image: linear-gradient(45deg, #3eb060, #0cabe1) 1 49%;*/
 }
 
 .thumb_5:hover {
@@ -2783,13 +2789,53 @@ textarea:focus {
     box-shadow: 0 5px 10px 0 rgba(0,0,0,.4);
 }
 
+.thumb_5:before {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: none;
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: .3s;
+    -webkit-transition-timing-function: ease;
+
+    -moz-transition-property: opacity;
+    -moz-transition-duration: .3s;
+    -moz-transition-timing-function: ease;
+
+    -ms-transition-property: opacity;
+    -ms-transition-duration: .3s;
+    -ms-transition-timing-function: ease;
+
+    -o-transition-property: opacity;
+    -o-transition-duration: .3s;
+    -o-transition-timing-function: ease;
+
+    transition-property: opacity;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.thumb_5:hover:before {
+    opacity: 1;
+    border-image: -webkit-linear-gradient(45deg, #3eb060, #0cabe1) 1 49%;
+    border-image: -moz-linear-gradient(45deg, #3eb060, #0cabe1) 1 49%;
+    border-image: linear-gradient(45deg, #3eb060, #0cabe1) 1 49%;
+}
+
 .thumb_5_img_box {
     height: 250px;
     overflow: hidden;
     position: relative;
-    -webkit-border-radius: 3px 3px 0 0;
+/*    -webkit-border-radius: 3px 3px 0 0;
     -moz-border-radius: 3px 3px 0 0;
-    border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;*/
 }
 
 .thumb_5_img_box img {
@@ -4025,10 +4071,14 @@ textarea:focus {
 
 .green_pill_2 {
     margin: 0;
-    padding: 9px 14px 8px 14px;
-    -webkit-background-image: linear-gradient(180deg, #0bace1 0%, #3eb060 100%);
-    -moz-background-image: linear-gradient(180deg, #0bace1 0%, #3eb060 100%);
-    background-image: linear-gradient(180deg, #0bace1 0%, #3eb060 100%);
+    padding: 7px 14px 6px 14px;
+    background: #ffffff;
+    color: #000000;
+    border-width: 3px;
+    border-style: solid;
+    border-image: -webkit-linear-gradient(45deg, #3eb060, #0cabe1) 1 49%;
+    border-image: -moz-linear-gradient(45deg, #3eb060, #0cabe1) 1 49%;
+    border-image: linear-gradient(45deg, #3eb060, #0cabe1) 1 49%;
 }
 
 .inline_2 {
@@ -4071,7 +4121,8 @@ textarea:focus {
     height: calc(100% - 7px);
     position: absolute;
     top: 7px;
-    right: 0;
+    /*right: 0;*/
+    right: 100%;
     z-index: -1;
 }
 
@@ -4087,7 +4138,7 @@ textarea:focus {
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 100px;
+    top: 0;
     left: 0;
 }
 
@@ -4102,6 +4153,7 @@ textarea:focus {
 
 .map_object_templ.map_show .object_map {    
     z-index: 1;
+    right: 0;
 }
 
 .map_object_templ .object_map {
@@ -4109,7 +4161,7 @@ textarea:focus {
 }
 
 .map_object_header {
-    margin: 8px 0 1px 0;
+    margin: 10px 0 5px 0;
 }
 
 /*.map_object_header .left {
@@ -4240,6 +4292,27 @@ textarea:focus {
     -webkit-box-shadow: 0 3px 26px 3px rgba(0, 0, 0, .12);
     -moz-box-shadow: 0 3px 26px 3px rgba(0, 0, 0, .12);
     box-shadow: 0 3px 26px 3px rgba(0, 0, 0, .12);
+}
+
+.object_card:before {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: none;
+}
+
+.object_card:hover:before {
+    opacity: 1;
+    border-image: -webkit-linear-gradient(45deg, #3eb060, #0cabe1) 1 49%;
+    border-image: -moz-linear-gradient(45deg, #3eb060, #0cabe1) 1 49%;
+    border-image: linear-gradient(45deg, #3eb060, #0cabe1) 1 49%;
 }
 
 .object_slider_wrapp {
@@ -4534,6 +4607,8 @@ textarea:focus {
     border-collapse: collapse;
     border: 1px solid #dbdbdb;
     margin: 5px 0;
+    position: relative;
+    z-index: 2;
 }
 
 .object_table .table_row {
@@ -4623,12 +4698,40 @@ textarea:focus {
     background-color: #ffffff;
 }
 
+.object_card .hover_box:before {
+    display: block;
+    content: "";
+    border-style: solid;
+    border-width: 3px;
+    border-top: none;
+    border-color: #3eb060;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -3px;
+}
+
 .object_card:hover .hover_box {
     display: block;
 }
 
 .two_cols_templ_wrapp_2 {
     padding: 37px 0 55px 0;
+}
+
+.icon_link_2 {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.images_paths_array {
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: -999999px;
 }
 
 .pagination {
@@ -4932,6 +5035,10 @@ textarea:focus {
 
 }
 
+.resp_filter_wrapp .dropdown_item_title {
+    width: 100%;
+}
+
 .dropdow_item_wrapp.resp .dropdown_item_title {
     padding: 0 19px 0 0;
     -webkit-border-radius: 0;
@@ -5023,10 +5130,20 @@ textarea:focus {
     margin: 0 -6px;
 }
 
-.green_pills_wrapp .pill_checlbox_2 {
+.pill_checlbox_2 {
     display: inline-block;
     vertical-align: top;
     margin: 3px;
+}
+
+.pill_checlbox_2 input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    z-index: -1;
 }
 
 .pill_checlbox_2 label {
@@ -5068,7 +5185,7 @@ textarea:focus {
     /*max-width: 400px;*/
     max-width: 435px;
     background-color: #ffffff;
-    padding: 10px 25px;
+    padding: 3px 25px;
     position: fixed;
     bottom: 0;
     left:0;
@@ -5077,6 +5194,10 @@ textarea:focus {
     -moz-box-shadow: 0 -3px 5px 0 rgba(0,0,0,.2);
     box-shadow: 0 -3px 5px 0 rgba(0,0,0,.2);
     text-align: center;
+}
+
+.share_btn {
+    padding: 10px 0;
 }
 
 .footer_two_cols_resp .left {
@@ -5564,3 +5685,15 @@ textarea:focus {
     font-weight: normal;
     line-height: 22px;
 }
+
+/*-- Photo Gallery --*/
+
+.photo_gallery {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 0;
+    left: -99999999px;
+}
+
+/*-- /Photo Gallery --*/
