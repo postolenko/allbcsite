@@ -4932,7 +4932,8 @@ textarea:focus {
     max-width: 435px;
     overflow-y: auto;
     /*padding: 20px 25px;*/
-    padding: 40px 25px 100px 25px;
+    /*padding: 40px 25px 100px 25px;*/
+    padding: 40px 25px 155px 25px;
     background: #ffffff;
 /*    background: #ffffff;
     position: absolute;
@@ -5040,12 +5041,15 @@ textarea:focus {
 }
 
 .resp_filter_wrapp {
-    padding: 8px 0;
     border-bottom: 1px solid #ededed;
 }
 
 .resp_filter_wrapp .range_inputs {
     margin: 9px 0;
+}
+
+.resp_filter_inner {
+    padding: 10px 0;
 }
 
 .dropdow_item_wrapp.resp {
@@ -5057,7 +5061,8 @@ textarea:focus {
 }
 
 .dropdow_item_wrapp.resp .dropdown_item_title {
-    padding: 0 19px 0 0;
+    /*padding: 0 19px 0 0;*/
+    padding: 13px 19px 13px 0;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
@@ -5066,7 +5071,8 @@ textarea:focus {
 }
 
 .dropdow_item_wrapp.resp .dropdown_item_title:before {
-    top: 10px;
+    /*top: 10px;*/
+    top: 21px;
     right: 0;
 }
 
@@ -5234,35 +5240,6 @@ textarea:focus {
 .footer_two_cols_resp a {
     font-size: 18px;
     line-height: 18px;
-}
-
-.filter_resp_wrapp .top_box {
-    width: 100%;
-    background-color: #ffffff;
-    /*width: calc(100% - 15px);*/
-    max-width: 415px;
-    padding: 5px 25px;
-    z-index: 5;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.close_filters {
-    display: block;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    border: 1px solid transparent;
-    background-color: #ffffff;
-    background-image: url(img/close.svg);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-/*    position: absolute;
-    top: 5px;
-    left: 25px;
-    z-index: 5;*/
 }
 
 /*-- /Section 1 - Info Side Page --*/

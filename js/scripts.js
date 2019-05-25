@@ -968,14 +968,9 @@ $(document).ready(function() {
         }
     });
 
-    $(".close_filters, .mask_2").on("click", function() {
+    $(".mask_2").on("click", function() {
         $("#filters_menu").fadeOut(300);
         $("юmore_filter").removeClass("active");
-    });
-
-    $(".close_filters, .mask_2").on("click", function() {
-        $("#filters_menu").fadeOut(300);
-        $(".more_filter").removeClass("active");
     });
 
     $(this).keydown(function(eventObject){

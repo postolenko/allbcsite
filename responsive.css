@@ -157,7 +157,8 @@
 	}
 
 	.map_object_templ.map_show .object_map {
-		z-index: 3;
+		/*z-index: 3;*/
+		z-index: 4;
 	    position: fixed;
 	    width: 100% !important;
 	    height: 350px !important;
@@ -715,7 +716,7 @@
 	}
 
 	.filter_resp {
-    	padding: 40px 15px 115px 15px;
+    	padding: 13px 15px 160px 15px;
 	}
 
 	.footer_two_cols_resp {
