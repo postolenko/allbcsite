@@ -70,18 +70,30 @@ function getBarsChart() {
 }
 
 function getMapParams() {
-    if( $(".map_scroll").length > 0)  {
-        var eTop = $(".map_scroll").offset().top;
-        var eTopWindow = eTop - $(window).scrollTop();
-        // console.log(eTopWindow);
-        if(eTopWindow <= 0) {            
-            // $(".map_scroll").css({
-            //     "top" : eTopWindow * (-1) + "px"
-            // });
-            // $(".map_scroll").removeClass("fixed");
+    if( $(".object_map").length > 0) {
+        filtersCoord = $(".filter_nav").offset().top + $(".filter_nav").height();
+        mapCoord = $(".object_map").offset().top;        
+        if(filtersCoord >= mapCoord) {            
+            $(".map_scroll").addClass("fixed");
+            $(".map_scroll").css({
+                "top" : $(".filter_nav").height() + "px"
+            });
+            mapScrollBootmCoord = filtersCoord + $(".map_scroll").height();
+            bottomCoord = $(".bottom_coord").offset().top;
+            if( mapScrollBootmCoord >= bottomCoord ) {
+                $(".map_scroll").addClass("bottom_position");
+            } else {
+                $(".map_scroll").removeClass("bottom_position");
+            }
         } else {
-            // $(".map_scroll").addClass("fixed");
+            $(".map_scroll").removeClass("fixed");
+            $(".map_scroll").css({
+                "top" : 0
+            });
         }
+        $(".map_scroll").css({
+            "height" : $(window).height() - $(".filter_nav").height() + "px"
+        });
     }
 }
 
@@ -152,6 +164,11 @@ var minVal,
     values,
     handleLower,
     handleUpperr;
+
+var filtersCoord,
+    mapCoord,
+    mapScrollBootmCoord,
+    bottomCoord;
 
 
 $(window).resize(function() {

@@ -4117,16 +4117,17 @@ textarea:focus {
 
 .object_map {
     width: 50%;
+    height: 100%;
     overflow: hidden;
     height: calc(100% - 7px);
     position: absolute;
     top: 7px;
-    /*right: 0;*/
     right: 100%;
     z-index: -1;
 }
 
 .map_scroll {
+    display: block;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -4134,7 +4135,22 @@ textarea:focus {
     right: 0;
 }
 
-.object_map #object_map {
+.map_scroll.fixed {
+    width: calc(50% - 17px);
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.map_scroll.fixed.bottom_position {
+    width: 100%;
+    position: absolute;
+    top: unset !important;
+    bottom: 0;
+}
+
+.map_scroll #object_map {
+    display: block;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -5197,7 +5213,11 @@ textarea:focus {
 }
 
 .share_btn {
-    padding: 10px 0;
+
+}
+
+.share_btn .green_pill_2 {
+    margin: 10px 0;
 }
 
 .footer_two_cols_resp .left {
