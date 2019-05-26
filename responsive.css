@@ -711,6 +711,10 @@
 		padding-bottom: 0;
 	}
 
+	.filter_resp {
+	    padding: 1px 15px 135px 15px;
+	}
+
 	.filter_nav.fixed {
 		top: 49px;
 	}
