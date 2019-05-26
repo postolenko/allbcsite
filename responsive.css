@@ -719,9 +719,9 @@
     	padding: 1px 15px 160px 15px;
 	}
 
-	.footer_two_cols_resp {
+/*	.footer_two_cols_resp {
 	    padding: 5px 15px 3px 15px;
-	}
+	}*/
 
 	.pagination li a {
 	    padding: 0;
@@ -805,9 +805,9 @@
 	    max-width: calc(100% - 20px);
 	}
 
-	.footer_two_cols_resp {
+/*	.footer_two_cols_resp {
 	    max-width: 100%;
-	}
+	}*/
 
 	.objects_cards {
 	    margin: 0 !important;
