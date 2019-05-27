@@ -177,17 +177,19 @@
 		left: 0 !important;
 	}
 
-/*	.map_show .two_cols_templ .left {
-	    width: 50%;
-	    padding-right: 1%;
+	/*-- /Section 1 - Info Side Page --*/
+
+	/*-- Section 3 - Info Side Page --*/
+
+	.static_table .table_row .table_cell:nth-child(1) {
+	    padding-left: 2%;
 	}
 
-	.map_show .two_cols_templ .right {
-	    width: 50%;
-	    padding-left: 1%;
-	}*/
+	.static_table .table_row .table_cell:nth-child(4) {
+	    padding-right: 2%;
+	}
 
-	/*-- /Section 1 - Info Side Page --*/
+	/*-- /Section 3 - Info Side Page --*/
 
 }
 
@@ -565,15 +567,19 @@
 	    right: 0;
 	}
 
-/*	.main_nav_wrapp {
-		min-width: 100%;
-	}*/
-
 	.header_site_inner .main_nav_wrapp {
 	    background: rgba(255, 255, 255, .95);
 	}
 
 	/*-- /Header --*/
+
+	/*-- Section 1 - Info Side Page --*/
+
+	.filter_nav.fixed {
+	    top: 52px;
+	}
+
+	/*-- /Section 1 - Info Side Page --*/
 
 }
 
@@ -605,10 +611,6 @@
 	.green_pill_2 {
 		font-size: 15px;
 	}
-
-/*	.header_1 .row {
-	    padding: 0 15px;
-	}*/
 
 	.header_1 .dropdown_title:before {
 	    top: 22px;
@@ -746,6 +748,14 @@
 		right: 5px;
 	}
 
+	.map_object_templ.map_show .object_map {
+	    height: 200px !important;
+	}
+
+	.object_map .map_scroll {
+	    height: 200px !important;
+	}
+
 	/*-- /Section 1 - Info Side Page --*/
 
 	/*-- Section 2 - Info Side Page --*/
@@ -755,6 +765,30 @@
 	}
 
 	/*-- /Section 2 - Info Side Page --*/
+
+	/*-- Section 3 - Info Side Page --*/
+
+	.static_table .green_link_2 {
+	    font-size: 13px;
+	}
+
+	.static_table p {
+	    font-size: 13px;
+	}
+
+	.static_table h4 {
+	    font-size: 13px;
+	    line-height: 18px;
+	}
+
+	.static_table .table_row .table_cell {
+	    padding-top: 9px;
+	    padding-bottom: 11px;
+	    padding-left: 8px;
+	    padding-right: 8px;
+	}
+
+	/*-- /Section 3 - Info Side Page --*/
 
 }
 
@@ -817,6 +851,18 @@
 	}
 
 	/*-- /Section 1 - Info Side Page --*/
+
+	/*-- Section 3 - Info Side Page --*/
+
+	.table_slider .overflow_y {
+		overflow-y: auto;
+	}
+
+	.static_table {
+		min-width: 540px;
+	}
+
+	/*-- /Section 3 - Info Side Page --*/
 
 }
 
