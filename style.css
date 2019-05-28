@@ -1631,6 +1631,11 @@ textarea:focus {
     background-color: #e0e0e0;
 }
 
+img.logo_black {
+    width: 78px;
+    height: 32px;
+}
+
 .dropdowm_wrapp_2 .dropdown_title input,
 .dropdowm_wrapp_2 .dropdown_title .p_width {
     color: #000000;
@@ -4249,7 +4254,8 @@ textarea:focus {
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(255, 255, 255, .9);
+    /*background: rgba(255, 255, 255, .9);*/
+    background: rgba(255, 255, 255, .7);
     z-index: 4;
 }
 
@@ -4282,7 +4288,7 @@ textarea:focus {
 .map_scroll {
     display: block;
     width: 100%;
-    height: 100%;
+    height: calc(100vh + 100px);
     position: absolute;
     top: 0;
     right: 0;
@@ -4290,7 +4296,6 @@ textarea:focus {
 
 .map_scroll.fixed {
     width: calc(50% - 17px);
-    height: calc(100vh + 100px);
     position: fixed;
     top: 0;
     right: 0;
@@ -4348,7 +4353,7 @@ textarea:focus {
 }
 
 .map_object_header .custom_select_wrapp {
-    padding-top: 4px;
+    padding-top: 3px;
 }
 
 .inlines_wrapp {
@@ -4378,7 +4383,7 @@ textarea:focus {
 
 .map_object_header p {
     font-size: 14px;
-    line-height: 20px;
+    line-height: 21px;
     font-weight: 400;
     color: #000000;
 }

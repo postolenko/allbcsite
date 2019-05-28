@@ -161,7 +161,7 @@
 		z-index: 4;
 	    position: fixed;
 	    width: 100% !important;
-	    height: 350px !important;
+	    height: 300px !important;
 	    top: unset !important;
 	    bottom: 0 !important;
 		-webkit-box-shadow: 0 -2px 5px 0 rgba(0,0,0,.3);
@@ -171,7 +171,7 @@
 
 	.object_map .map_scroll {
 		width: 100% !important;
-		height: 350px !important;
+		height: 300px !important;
 		position: absolute !important;
 		top: 0 !important;
 		left: 0 !important;
