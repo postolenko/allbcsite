@@ -75,9 +75,9 @@ function getMapParams() {
         mapCoord = $(".object_map").offset().top;        
         if(filtersCoord >= mapCoord) {            
             $(".map_scroll").addClass("fixed");
-            $(".map_scroll").css({
-                "top" : $(".filter_nav").height() + "px"
-            });
+            // $(".map_scroll").css({
+            //     "top" : $(".filter_nav").height() + "px"
+            // });
             mapScrollBootmCoord = filtersCoord + $(".map_scroll").height();
             bottomCoord = $(".bottom_coord").offset().top;
             if( mapScrollBootmCoord >= bottomCoord ) {
@@ -91,9 +91,9 @@ function getMapParams() {
                 "top" : 0
             });
         }
-        $(".map_scroll").css({
-            "height" : $(window).height() - $(".filter_nav").height() + "px"
-        });
+        // $(".map_scroll").css({
+        //     "height" : $(window).height() - $(".filter_nav").height() + "px"
+        // });
     }
 }
 
@@ -705,12 +705,12 @@ $(document).ready(function() {
             parentBlock.closest(".item_wrapp").addClass("z_top");
             $("#map_box .mask").addClass("visible");
             getBarsChart();
-            if(parentBlock.closest(".items_sect").length > 0 &&
-                $(".filter_resp").is(":visible") ) {
-                $(".filter_resp").fadeOut(300);
-                $(".more_filter").removeClass("active");
-                $(".mask_2").fadeOut(300);
-            }
+            // if(parentBlock.closest(".items_sect").length > 0 &&
+            //     $(".filter_resp").is(":visible") ) {
+            //     $(".filter_resp").fadeOut(300);
+            //     $(".more_filter").removeClass("active");
+            //     $(".mask_2").fadeOut(300);
+            // }
         } else {
             dropdowmMenu.slideUp(300);
             parentBlock.removeClass("active");
@@ -718,40 +718,66 @@ $(document).ready(function() {
         }
     });
 
-    $(this).keydown(function(eventObject){
-        if (eventObject.which == 27) {
-            $(".dropdown_item_menu").slideUp(300);
-            setTimeout(function() {
-                $(".dropdow_item_wrapp").removeClass("active");
-                $("#map_box .mask").removeClass("visible");
-            }, 400);
-        }
-    });
+    // $(this).keydown(function(eventObject){
+    //     if (eventObject.which == 27) {
+    //         $(".dropdown_item_menu").slideUp(300);
+    //         setTimeout(function() {
+    //             $(".dropdow_item_wrapp").removeClass("active");
+    //             $("#map_box .mask").removeClass("visible");
+    //         }, 400);
+    //     }
+    // });
 
-    $("#map_box .mask").on("click", function(e) {
+    // $("#map_box .mask").on("click", function(e) {
+    //     e.preventDefault();
+    //     $(".dropdown_item_menu").slideUp(300);
+    //     setTimeout(function() {
+    //         $(".dropdow_item_wrapp").removeClass("active");
+    //         $(this).removeClass("visible");
+    //     }, 400);
+    // });
+
+    // $(document).mouseup(function(e) {
+    //     var hide_element = $(".dropdown_item_menu");
+    //     if (!hide_element.is(e.target)
+    //         && hide_element.has(e.target).length === 0) {
+    //         hide_element.slideUp(300);
+    //         setTimeout(function() {
+    //             $(".dropdow_item_wrapp").each(function() {
+    //                 if($(this).find(".dropdown_item_menu").is(":hidden")) {
+    //                     $(this).removeClass("active");
+    //                 }
+    //             });
+    //         }, 400);
+    //         $("#map_box .mask").removeClass("visible");
+    //     }
+    // });
+
+    $(".more_filter").on('click', function(e) {
         e.preventDefault();
-        $(".dropdown_item_menu").slideUp(300);
-        setTimeout(function() {
-            $(".dropdow_item_wrapp").removeClass("active");
-            $(this).removeClass("visible");
-        }, 400);
-    });
-
-    $(document).mouseup(function(e) {
-        var hide_element = $(".dropdown_item_menu");
-        if (!hide_element.is(e.target)
-            && hide_element.has(e.target).length === 0) {
-            hide_element.slideUp(300);
-            setTimeout(function() {
-                $(".dropdow_item_wrapp").each(function() {
-                    if($(this).find(".dropdown_item_menu").is(":hidden")) {
-                        $(this).removeClass("active");
-                    }
-                });
-            }, 400);
-            $("#map_box .mask").removeClass("visible");
+        if( $("#filters_menu").is(":hidden") ) {
+            $("#filters_menu").fadeIn(300);
+            $(this).addClass("active");
+            // $(".mask_2").fadeIn(300);
+            getBarsChart();
+        } else {
+            $("#filters_menu").fadeOut(300);
+            $(this).removeClass("active");
+            // $(".mask_2").fadeOut(300);
         }
     });
+
+    // $(".mask_2").on("click", function() {
+    //     $("#filters_menu").fadeOut(300);
+    //     $(".more_filter").removeClass("active");
+    // });
+
+    // $(this).keydown(function(eventObject){
+    //     if (eventObject.which == 27) {
+    //         $("#filters_menu").fadeOut(300);
+    //         $(".more_filter").removeClass("active");
+    //     }
+    // });
 
     $(".custom_select .select_input").on("click", function(e) {
         e.preventDefault();
@@ -797,32 +823,6 @@ $(document).ready(function() {
         var inputVal = parentBlock.find(".select_input .sel_val");
         parentBlock.find(".select_res").val(itemText);
         inputVal.html(itemText);
-    });
-
-    $(".more_filter").on('click', function(e) {
-        e.preventDefault();
-        if( $("#filters_menu").is(":hidden") ) {
-            $("#filters_menu").fadeIn(300);
-            $(this).addClass("active");
-            // $(".mask_2").fadeIn(300);
-            getBarsChart();
-        } else {
-            $("#filters_menu").fadeOut(300);
-            $(this).removeClass("active");
-            // $(".mask_2").fadeOut(300);
-        }
-    });
-
-    $(".mask_2").on("click", function() {
-        $("#filters_menu").fadeOut(300);
-        $(".more_filter").removeClass("active");
-    });
-
-    $(this).keydown(function(eventObject){
-        if (eventObject.which == 27) {
-            $("#filters_menu").fadeOut(300);
-            $(".more_filter").removeClass("active");
-        }
     });
 
     // Range Slider

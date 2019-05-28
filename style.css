@@ -3383,7 +3383,7 @@ textarea:focus {
     position: relative;
     background-color: #ffffff;   
     padding: 3px 0 4px 0;
-    z-index: 4;
+    z-index: 5;
     border-bottom: 1px solid #e5e5e5;
     border-bottom: 1px solid #e5e5e5;
 }
@@ -4250,7 +4250,7 @@ textarea:focus {
     top: 0;
     left: 0;
     background: rgba(255, 255, 255, .9);
-    z-index: 3;
+    z-index: 4;
 }
 
 #map_box .mask.visible {
@@ -4290,6 +4290,7 @@ textarea:focus {
 
 .map_scroll.fixed {
     width: calc(50% - 17px);
+    height: calc(100vh + 100px);
     position: fixed;
     top: 0;
     right: 0;
@@ -4334,6 +4335,20 @@ textarea:focus {
     margin: 10px 0 5px 0;
     position: relative;
     z-index: 3;
+}
+
+.map_object_header .left {
+    width: calc(100% - 220px);
+    padding-right: 5px;
+}
+
+.map_object_header .right {
+    width: 220px;
+    padding-left: 5px;
+}
+
+.map_object_header .custom_select_wrapp {
+    padding-top: 4px;
 }
 
 .inlines_wrapp {
@@ -4452,13 +4467,15 @@ textarea:focus {
 }
 
 .object_card:before {
-    width: 100%;
-    height: 100%;
+/*    width: 100%;
+    height: 100%;*/
     opacity: 0;
     content: "";
     position: absolute;
     top: -3px;
     left: -3px;
+    right: -3px;
+    bottom: -3px;
     border-width: 3px;
     border-style: solid;
     border-color: transparent;
@@ -4634,6 +4651,7 @@ textarea:focus {
 }
 
 .object_thumb_descript {
+    min-height: 210px;
     border: 1px solid #cdcece;
     border-top: none;
     padding: 23px 15px 2px 15px;

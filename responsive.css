@@ -756,6 +756,16 @@
 	    height: 200px !important;
 	}
 
+	.map_object_header .left {
+	    width: 100%;
+	    float: none;
+	    padding-right: 0;
+	}
+
+	.map_object_header .right {
+		display: none;
+	}
+
 	/*-- /Section 1 - Info Side Page --*/
 
 	/*-- Section 2 - Info Side Page --*/
