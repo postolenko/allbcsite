@@ -84,6 +84,15 @@ body {
     background: #ffffff;
 }
 
+body.fixed_position {
+    /*width: 100%;*/
+/*    position: fixed;
+    top: auto;
+    left: 0;*/
+    overflow: hidden;
+    padding-right: 17px;
+}
+
 .wrapper {
     position: relative;
     display: flex;
@@ -3405,6 +3414,8 @@ img.logo_black {
 
 .items_sect {
     margin: 0 -3px;
+    position: relative;
+    z-index: 3;
 }
 
 .items_sect .left {
@@ -4288,7 +4299,7 @@ img.logo_black {
 .map_scroll {
     display: block;
     width: 100%;
-    height: calc(100vh + 100px);
+    height: 100vh;
     position: absolute;
     top: 0;
     right: 0;
@@ -4464,16 +4475,39 @@ img.logo_black {
     position: relative;
 }
 
-.object_card:hover {
+.border_wrapp {
+    position: relative;
+    -webkit-transition-property: box-shadow;
+    -webkit-transition-duration: .3s;
+    -webkit-transition-timing-function: ease;
+
+    -moz-transition-property: box-shadow;
+    -moz-transition-duration: .3s;
+    -moz-transition-timing-function: ease;
+
+    -ms-transition-property: box-shadow;
+    -ms-transition-duration: .3s;
+    -ms-transition-timing-function: ease;
+
+    -o-transition-property: box-shadow;
+    -o-transition-duration: .3s;
+    -o-transition-timing-function: ease;
+
+    transition-property: box-shadow;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.object_card:hover .border_wrapp {
     z-index: 3;
     -webkit-box-shadow: 0 3px 26px 3px rgba(0, 0, 0, .12);
     -moz-box-shadow: 0 3px 26px 3px rgba(0, 0, 0, .12);
     box-shadow: 0 3px 26px 3px rgba(0, 0, 0, .12);
 }
 
-.object_card:before {
-/*    width: 100%;
-    height: 100%;*/
+.border_wrapp:before {
+    width: 100%;
+    height: 100%;
     opacity: 0;
     content: "";
     position: absolute;
@@ -4484,14 +4518,13 @@ img.logo_black {
     border-width: 3px;
     border-style: solid;
     border-color: transparent;
-    border-image: none;
-}
-
-.object_card:hover:before {
-    opacity: 1;
     border-image: -webkit-linear-gradient(45deg, #3eb060, #0cabe1) 1 49%;
     border-image: -moz-linear-gradient(45deg, #3eb060, #0cabe1) 1 49%;
     border-image: linear-gradient(45deg, #3eb060, #0cabe1) 1 49%;
+}
+
+.object_card:hover .border_wrapp:before {
+    opacity: 1;
 }
 
 .object_slider_wrapp {
@@ -4564,6 +4597,7 @@ img.logo_black {
 }
 
 .object_slider .img_box {
+    display: block;
     height: 180px;
     overflow: hidden;
     position: relative;
@@ -4864,21 +4898,20 @@ img.logo_black {
     width: 100%;
     background: #ffffff;
     margin-top: -3px;
-    position: absolute;
-    top: 100%;
+    position: relative;
     left: 0;
     padding: 0 15px 15px 15px;
     z-index: 2;
     -webkit-border-radius: 0 0 3px 3px;
     -moz-border-radius: 0 0 3px 3px;
     border-radius: 0 0 3px 3px;
-    -webkit-box-shadow: 0 16px 16px 3px rgba(0, 0, 0, .12);
+/*    -webkit-box-shadow: 0 16px 16px 3px rgba(0, 0, 0, .12);
     -moz-box-shadow: 0 16px 16px 3px rgba(0, 0, 0, .12);
-    box-shadow: 0 16px 16px 3px rgba(0, 0, 0, .12);
+    box-shadow: 0 16px 16px 3px rgba(0, 0, 0, .12);*/
     background-color: #ffffff;
 }
 
-.object_card .hover_box:before {
+/*.object_card .hover_box:before {
     display: block;
     content: "";
     border-style: solid;
@@ -4890,7 +4923,7 @@ img.logo_black {
     position: absolute;
     top: 0;
     left: -3px;
-}
+}*/
 
 .object_card:hover .hover_box {
     display: block;

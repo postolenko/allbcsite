@@ -71,14 +71,14 @@ function getBarsChart() {
 
 function getMapParams() {
     if( $(".object_map").length > 0) {
-        // filtersCoord = $(".filter_nav").offset().top + $(".filter_nav").height();
-        filtersCoord = $(".filter_nav").offset().top;
+        filtersCoord = $(".filter_nav").offset().top + $(".filter_nav").height();
+        // filtersCoord = $(".filter_nav").offset().top;
         mapCoord = $(".object_map").offset().top;        
         if(filtersCoord >= mapCoord) {            
             $(".map_scroll").addClass("fixed");
-            // $(".map_scroll").css({
-            //     "top" : $(".filter_nav").height() + "px"
-            // });
+            $(".map_scroll").css({
+                "top" : $(".filter_nav").height() + "px"
+            });
             mapScrollBootmCoord = filtersCoord + $(".map_scroll").height();
             bottomCoord = $(".bottom_coord").offset().top;
             if( mapScrollBootmCoord >= bottomCoord ) {
@@ -115,6 +115,21 @@ function getfilterNavParams() {
             });
         }
     }
+}
+
+function getCardParams() {
+    $(".object_card").each(function() {
+        var innerWrapp = $(this).find(".inner_wrapp");
+        $(this).height(innerWrapp.height());
+    });
+}
+
+function gettopCoordMenu() {
+    // var topCoordMenu = $(".filter_nav").offset().top + $(".filter_nav").height();
+    // console.log(topCoordMenu);
+    // $(".filter_resp").css({
+    //     "top" : topCoordMenu + "px"
+    // });
 }
 
 // function getRespFilterParams() {
@@ -172,6 +187,7 @@ var filtersCoord,
     mapScrollBootmCoord,
     bottomCoord;
 
+var innerWrapp;
 
 $(window).resize(function() {
 
@@ -181,6 +197,7 @@ $(window).resize(function() {
     getMapParams();
     getBarsChart();
     getfilterNavParams();
+    getCardParams();
     // getRespFilterParams();
     // getRespFilterParams();
 
@@ -190,6 +207,8 @@ $(document).scroll(function() {
     getHeaderParams();
     getMapParams();
     getfilterNavParams();
+    getCardParams();
+    // gettopCoordMenu();
 });
 
 $(document).ready(function() {
@@ -198,6 +217,7 @@ $(document).ready(function() {
     getMapParams();
     getBarsChart();
     getfilterNavParams();
+    getCardParams();
     // getRespFilterParams();
 
     $(".top_menu").each(function() {
@@ -738,9 +758,12 @@ $(document).ready(function() {
             $("#filters_menu").fadeIn(300);
             $(this).addClass("active");
             getBarsChart();
+            $("body").addClass("fixed_position");
+            // gettopCoordMenu();
         } else {
             $("#filters_menu").fadeOut(300);
             $(this).removeClass("active");
+            $("body").removeClass("fixed_position");
         }
         $(".dropdown_item_menu").slideUp(300);
         $(".dropdow_item_wrapp").removeClass("active");
@@ -750,6 +773,7 @@ $(document).ready(function() {
     $(".mask_2").on("click", function() {
         $("#filters_menu").fadeOut(300);
         $(".more_filter").removeClass("active");
+        $("body").removeClass("fixed_position");
     });
 
     $(this).keydown(function(eventObject){
@@ -757,6 +781,7 @@ $(document).ready(function() {
             $("#filters_menu").fadeOut(300);
             $(".more_filter").removeClass("active");
             $(".dropdown_item_menu").slideUp(300);
+            $("body").removeClass("fixed_position");
             setTimeout(function() {
                 $(".dropdow_item_wrapp").removeClass("active");
                 $("#map_box .mask").removeClass("visible");
