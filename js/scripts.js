@@ -697,8 +697,10 @@ $(document).ready(function() {
         var mapCheckbox = $(this).find("input");
         if(mapCheckbox.prop("checked")) {
             $(".map_object_templ").addClass("map_show");
+            $(".object_map").addClass("visible");
         } else {
             $(".map_object_templ").removeClass("map_show");
+            $(".object_map").removeClass("visible");
         }
     });
 
@@ -917,8 +919,8 @@ $(document).ready(function() {
                 }
             });
             // if( $("#range_slider_2").closest(".resp_filter_wrapp").length > 0 ) {
-                $("[data-filters-index='filters_3'] .minVal2").html(minVal);
-                $("[data-filters-index='filters_3'] .maxVal2").html(maxVal);
+                $("[data-filters-index='filters_3'] .minVal2").html(leftRange);
+                $("[data-filters-index='filters_3'] .maxVal2").html(rightRange);
                 $(".price_resp").html($("#price_sel").html());
             // }
         });
@@ -1133,9 +1135,8 @@ $(document).ready(function() {
     // ------------------
     var filtersIndex;
     var filtersArray;
-    var i=0;
-    $("[data-filter]").on("click", function(e) {
-        // e.preventDefault();
+
+    $("[data-filter]").on("click", function() {
         if(!$(this).hasClass("checked_filter")) {
             $(this).addClass("checked_filter");
             filtersIndex = $(this).attr("data-filter");                       
@@ -1145,13 +1146,16 @@ $(document).ready(function() {
         filtersArray = []; 
         $("[data-filter = '"+ filtersIndex +"']").each(function() {
             if($(this).hasClass("checked_filter") ) {
-                i++;
                 filtersArray.push($(this).text());
-                // filtersArray += $(this).text() +", ";
             }
         });
-        console.log(filtersArray +"   "+ filtersIndex  +"   "+ i);
         $("[data-filters-index = '"+filtersIndex+"']").text(filtersArray);
+    });
+
+    $("[data-radio-filter]").on("click", function() {
+        filtersIndex = $(this).attr("data-radio-filter");
+        filtersArray = "";
+        $("[data-filters-index = '"+filtersIndex+"']").text($(this).html());
     });
 
 });

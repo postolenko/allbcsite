@@ -580,25 +580,25 @@
 									<div>
 										<div class="radio_wrapp_2">
 											<input type="radio" name="filter_radio" id="r_15_2">
-											<label for="r_15_2">По возрастанию цены</label>
+											<label for="r_15_2" data-radio-filter="filters_7">По возрастанию цены</label>
 										</div>
 									</div>
 									<div>
 										<div class="radio_wrapp_2">
 											<input type="radio" name="filter_radio" id="r_16_2">
-											<label for="r_16_2">По убыванию цены</label>
+											<label for="r_16_2" data-radio-filter="filters_7">По убыванию цены</label>
 										</div>
 									</div>
 									<div>
 										<div class="radio_wrapp_2">
 											<input type="radio" name="filter_radio" id="r_17_2">
-											<label for="r_17_2">По популярности</label>
+											<label for="r_17_2" data-radio-filter="filters_7">По популярности</label>
 										</div>
 									</div>
 									<div>
 										<div class="radio_wrapp_2">
 											<input type="radio" name="filter_radio" id="r_18_2">
-											<label for="r_18_2">По дате добавления</label>
+											<label for="r_18_2" data-radio-filter="filters_7">По дате добавления</label>
 										</div>
 									</div>
 								</div>
@@ -678,7 +678,8 @@
 								<!-- </div> -->
 							</div>
 						</div>
-					</div>				
+					</div>
+					<div class="append-elem" data-append-elem = "map_index"></div>		
 					<div class="map_object_templ">
 						<div class="row">
 							<div class="w_half">
@@ -1927,9 +1928,17 @@
 								</ul>
 							</div>
 						</div>
-						<div class="object_map">
-							<div class="map_scroll">
-								<div id="object_map"></div>
+						<div class="append-elem" data-append-desktop-elem = "map_index" data-min-screen = "1024">
+							<div class="object_map">
+								<div class="map_scroll">
+									<div class="map_search_wrapp">
+										<div class="map_search checkbox">
+											<input type="checkbox" name="mach_ch" id="map_ch" />
+											<label for="map_ch">Поиск при перемещении на карте</label>
+										</div>
+									</div>
+									<div id="object_map"></div>
+								</div>								
 							</div>
 						</div>
 					</div>
