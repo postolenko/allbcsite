@@ -100,19 +100,21 @@ function getMapParams() {
 
 function getfilterNavParams() {
     if($("#filters").length > 0) {
-        $(".filter_resp").css({"height" : "auto"});
+        // $(".filter_resp").css({"height" : "auto"});
         if($(window).scrollTop() > $("#filters").offset().top ) {
             $(".filter_nav").addClass("fixed");
+            $(".filter_resp").addClass("scroll");
             $("#filters").outerHeight($(".filter_nav").outerHeight());
-            $(".filter_resp").css({
-                "height" : $(window).height() - $("#filters").height() + "px"
-            });
+            // $(".filter_resp").css({
+            //     "height" : $(window).height() - $("#filters").height() + "px"
+            // });
         } else {
             $(".filter_nav").removeClass("fixed");
+            $(".filter_resp").removeClass("scroll");
             $("#filters").height(false);            
-            $(".filter_resp").css({
-                "height" : $(window).height() - $("#filters").height() - $(".header_site_inner").height() + "px"
-            });
+            // $(".filter_resp").css({
+            //     "height" : $(window).height() - $("#filters").height() - $(".header_site_inner").height() + "px"
+            // });
         }
     }
 }
@@ -730,7 +732,7 @@ $(document).ready(function() {
             } else {
                 $("#map_box .mask").removeClass("visible");
             }
-            $("#filters_menu").fadeOut(300);
+            $("#filters_menu").removeClass("visible");
             $(".more_filter").removeClass("active");            
         }        
         if(dropdowmMenu.is(":hidden")) {
@@ -754,14 +756,16 @@ $(document).ready(function() {
 
     $(".more_filter").on('click', function(e) {
         e.preventDefault();
-        if( $("#filters_menu").is(":hidden") ) {
-            $("#filters_menu").fadeIn(300);
+        if( !$("#filters_menu").hasClass("visible") ) {
+            // $("#filters_menu").fadeIn(300);
+            $("#filters_menu").addClass("visible");
             $(this).addClass("active");
             getBarsChart();
             $("body").addClass("fixed_position");
             // gettopCoordMenu();
         } else {
-            $("#filters_menu").fadeOut(300);
+            // $("#filters_menu").fadeOut(300);
+            $("#filters_menu").removeClass("visible");
             $(this).removeClass("active");
             $("body").removeClass("fixed_position");
         }
@@ -770,15 +774,25 @@ $(document).ready(function() {
         $("#map_box .mask").removeClass("visible");
     });
 
+    $(".close_filter").on("click", function(e) {
+        e.preventDefault();
+        $("#filters_menu").removeClass("visible");
+        $("body").removeClass("fixed_position");
+        $(".more_filter").removeClass("active");
+        $(".dropdown_item_menu").slideUp(300);
+        $(".dropdow_item_wrapp").removeClass("active");
+        $("#map_box .mask").removeClass("visible");
+    });
+
     $(".mask_2").on("click", function() {
-        $("#filters_menu").fadeOut(300);
+        $("#filters_menu").removeClass("visible");
         $(".more_filter").removeClass("active");
         $("body").removeClass("fixed_position");
     });
 
     $(this).keydown(function(eventObject){
         if (eventObject.which == 27) {
-            $("#filters_menu").fadeOut(300);
+            $("#filters_menu").removeClass("visible");
             $(".more_filter").removeClass("active");
             $(".dropdown_item_menu").slideUp(300);
             $("body").removeClass("fixed_position");
@@ -807,14 +821,15 @@ $(document).ready(function() {
         }
     });
 
-    $(document).mouseup(function(e) {
-        hide_element = $("#filters_menu");
-        if (!hide_element.is(e.target)
-            && hide_element.has(e.target).length === 0) {
-            $("#filters_menu").fadeOut(300);
-            $(".more_filter").removeClass("active");
-        }
-    });
+    // $(document).mouseup(function(e) {
+    //     hide_element = $("#filters_menu");
+    //     if (!hide_element.is(e.target)
+    //         // && hide_element.has(e.target).length === 0
+    //         && hide_element.has(e.target).hasClass("visible")) {
+    //         $("#filters_menu").removeClass("visible");
+    //         $(".more_filter").removeClass("active");
+    //     }
+    // });
 
     // Custom Select 
 
@@ -862,6 +877,9 @@ $(document).ready(function() {
         var inputVal = parentBlock.find(".select_input .sel_val");
         parentBlock.find(".select_res").val(itemText);
         inputVal.html(itemText);
+        if(inputVal.attr("id") == "price_sel" ) {
+            $(".price_resp").html(itemText);
+        }
     });
 
     // Range Slider
@@ -898,6 +916,11 @@ $(document).ready(function() {
                     $(this).addClass("disable");
                 }
             });
+            // if( $("#range_slider_2").closest(".resp_filter_wrapp").length > 0 ) {
+                $("[data-filters-index='filters_3'] .minVal2").html(minVal);
+                $("[data-filters-index='filters_3'] .maxVal2").html(maxVal);
+                $(".price_resp").html($("#price_sel").html());
+            // }
         });
         priceSlider2.noUiSlider.on('set', function( values, handle ) {
             setTimeout(function() {           
@@ -914,6 +937,11 @@ $(document).ready(function() {
                     }
                 });
             }, 500);
+            // if( $("#range_slider_2").closest(".resp_filter_wrapp").length > 0 ) {
+                $("[data-filters-index='filters_3'] .minVal2").html(minVal);
+                $("[data-filters-index='filters_3'] .maxVal2").html(maxVal);
+                $(".price_resp").html($("#price_sel").html());
+            // }  
         });
         $("#input-number_1").keyup(function() {
             activeInputVal = parseInt( $(this).val() );
@@ -944,6 +972,11 @@ $(document).ready(function() {
             format: wNumb({
                 decimals: 0
             }),
+        });
+        priceSlider3.noUiSlider.on('update', function( values, handle ) {
+            minVal = parseInt( values[0] );
+            $("#metro_val").text(minVal);
+            $("#metro_name").html($("#metro_name_val a").html());
         });
     }
 
@@ -982,6 +1015,10 @@ $(document).ready(function() {
                     $(this).addClass("disable");
                 }
             });
+            // if( $("#range_slider_4").closest(".resp_filter_wrapp").length > 0 ) {
+                $("[data-filters-index='filters_4'] .minVal").html(minVal);
+                $("[data-filters-index='filters_4'] .maxVal").html(maxVal);
+            // }            
         });
 
         priceSlider4.noUiSlider.on('set', function( values, handle ) {
@@ -1051,6 +1088,9 @@ $(document).ready(function() {
         parentBlock.find(".custom_select_title").html(selectVal);
         parentBlock.find(".custom_select_item").removeClass("selected");
         $(this).addClass("selected");
+        if(parentBlock.find(".custom_select_title").attr("id") == "metro_name_val") {
+            $("#metro_name").html(selectVal);
+        }
     });
 
     $(".custom_select_title").on("click", function(e) {
@@ -1088,6 +1128,30 @@ $(document).ready(function() {
                 });
             }, 400);
         }
+    });
+
+    // ------------------
+    var filtersIndex;
+    var filtersArray;
+    var i=0;
+    $("[data-filter]").on("click", function(e) {
+        // e.preventDefault();
+        if(!$(this).hasClass("checked_filter")) {
+            $(this).addClass("checked_filter");
+            filtersIndex = $(this).attr("data-filter");                       
+        } else {
+            $(this).removeClass("checked_filter");
+        }
+        filtersArray = []; 
+        $("[data-filter = '"+ filtersIndex +"']").each(function() {
+            if($(this).hasClass("checked_filter") ) {
+                i++;
+                filtersArray.push($(this).text());
+                // filtersArray += $(this).text() +", ";
+            }
+        });
+        console.log(filtersArray +"   "+ filtersIndex  +"   "+ i);
+        $("[data-filters-index = '"+filtersIndex+"']").text(filtersArray);
     });
 
 });
