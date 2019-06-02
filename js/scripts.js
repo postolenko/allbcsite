@@ -812,7 +812,7 @@ $(document).ready(function() {
             // if($(this).closest(".items_sect").length > 0) {
                 hide_element.slideUp(300);
                 setTimeout(function() {
-                    $(".items_sect .dropdown_item_menu").each(function() {
+                    $(".dropdown_item_menu").each(function() {
                         if($(this).is(":hidden")) {
                             $(this).closest(".dropdow_item_wrapp").removeClass("active");
                         }
