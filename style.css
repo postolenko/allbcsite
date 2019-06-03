@@ -5143,9 +5143,6 @@ img.logo_black {
     left: -999999px;
     /*z-index: 4;*/
     z-index: -1;
-/*    -webkit-box-shadow: 0 5px 5px 0 rgba(0,0,0,.1);
-    -moz-box-shadow: 0 5px 5px 0 rgba(0,0,0,.1);
-    box-shadow: 0 5px 5px 0 rgba(0,0,0,.1);*/
 }
 
 .filter_resp_wrapp.visible {
