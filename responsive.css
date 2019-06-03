@@ -929,6 +929,10 @@
 	    margin: 7px auto !important;
 	}
 
+	.close_box {
+		max-width: 100%;
+	}
+
 	/*-- /Section 1 - Info Side Page --*/
 
 	/*-- Section 3 - Info Side Page --*/

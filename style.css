@@ -85,12 +85,13 @@ body {
 }
 
 body.fixed_position {
-    /*width: 100%;*/
-/*    position: fixed;
-    top: auto;
-    left: 0;*/
-    overflow: hidden;
     padding-right: 17px;
+/*    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;*/
 }
 
 .wrapper {
@@ -689,7 +690,8 @@ textarea:focus {
     vertical-align: top;
     width: 14px;
     height: 15px;
-    background-image: url(img/photo.png);
+    /*background-image: url(img/photo.png);*/
+    background-image: url(img/photo_camera.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -700,7 +702,7 @@ textarea:focus {
     vertical-align: top;
     width: 12px;
     height: 12px;
-    background-image: url(img/star_border.png);
+    background-image: url(img/star_border.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -4954,6 +4956,11 @@ img.logo_black {
 .icon_link_2 {
     display: inline-block;
     vertical-align: top;
+}
+
+.table_cell .star_2 {
+    position: relative;
+    top: 2px;
 }
 
 .images_paths_array {

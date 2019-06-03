@@ -211,6 +211,7 @@ $(document).scroll(function() {
     getfilterNavParams();
     getCardParams();
     // gettopCoordMenu();
+    console.log( $(document).scrollTop() );
 });
 
 $(document).ready(function() {
@@ -763,13 +764,34 @@ $(document).ready(function() {
             $("#filters_menu").addClass("visible");
             $(this).addClass("active");
             getBarsChart();
-            $("body").addClass("fixed_position");
+            $("body").css({
+                "position" : "fixed",
+                "top" :  -$(document).scrollTop() + "px",
+                "overflow" : "hidden",
+                "right" : 0,
+                "left" : 0,
+                "bottom" : 0
+            });
+            // $("body").addClass("fixed_position");
             // gettopCoordMenu();
         } else {
             // $("#filters_menu").fadeOut(300);
             $("#filters_menu").removeClass("visible");
             $(this).removeClass("active");
-            $("body").removeClass("fixed_position");
+            $("body").css("position","relative");
+            setTimeout(function() {
+                $("body").attr("style", "");
+            }, 500);
+            
+            // $("body").css({
+            //     "position" : "relative",
+            //     "top" :  "unset",
+            //     "overflow" : "unset",
+            //     "right" : "unset",
+            //     "left" : "unset",
+            //     "bottom" : "unset"
+            // });
+            // $("body").removeClass("fixed_position");
         }
         $(".dropdown_item_menu").slideUp(300);
         $(".dropdow_item_wrapp").removeClass("active");
