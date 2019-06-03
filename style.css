@@ -454,7 +454,8 @@ textarea:focus {
     position: absolute;
     top: 0;
     left: 1px;
-    background-image: url(img/slider_arrow.png);
+    /*background-image: url(img/slider_arrow.png);*/
+    background-image: url(img/slider_arrow.svg);
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -5033,7 +5034,8 @@ img.logo_black {
     content: "";
     width: 8px;
     height: 12px;
-    background-image: url(img/slider_arrow.png);
+    /*background-image: url(img/slider_arrow.png);*/
+    background-image: url(img/slider_arrow.svg);
     background-repeat: no-repeat;
     background-position: center;
     -webkit-transform: rotate(-180deg);
@@ -5055,7 +5057,8 @@ img.logo_black {
     content: "";
     width: 8px;
     height: 12px;
-    background-image: url(img/slider_arrow.png);
+    /*background-image: url(img/slider_arrow.png);*/
+    background-image: url(img/slider_arrow.svg);
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
