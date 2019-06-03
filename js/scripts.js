@@ -778,10 +778,10 @@ $(document).ready(function() {
             // $("#filters_menu").fadeOut(300);
             $("#filters_menu").removeClass("visible");
             $(this).removeClass("active");
-            $("body").css("position","relative");
-            setTimeout(function() {
+            // $("body").css("position","relative");
+            // setTimeout(function() {
                 $("body").attr("style", "");
-            }, 500);
+            // }, 500);
             
             // $("body").css({
             //     "position" : "relative",
