@@ -1004,9 +1004,9 @@ textarea:focus {
 
 .dropdown_title:before {
     content: "";
-    width: 9px;
-    height: 6px;
-    background-image: url(img/arrow_down.png);
+    width: 8px;
+    height: 8px;
+    background-image: url(img/down_arrow_icon_white.svg);
     background-position: right center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -1655,7 +1655,7 @@ img.logo_black {
 }
 
 .dropdowm_wrapp_2 .dropdown_title:before {
-    background-image: url(img/arrow_black.png);
+    background-image: url(img/down_arrow_icon.svg);
 }
 
 .search_icon_black {
@@ -3470,13 +3470,14 @@ img.logo_black {
     border: 1px solid transparent;
     background-color: transparent;
     width: 8px;
-    height: 5px;
-    background-image: url(img/arrow_black.png);
+    height: 8px;
+    /*background-image: url(img/arrow_black.png);*/
+    background-image: url(img/down_arrow_icon.svg);
     background-position: right center;
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
-    top: 18px;
+    top: 15px;
     right: 6px;
     -webkit-transition-property: transform;
     -webkit-transition-duration: .3s;
@@ -3849,14 +3850,15 @@ img.logo_black {
     border: 1px solid transparent;
     background-color: transparent;
     width: 8px;
-    height: 5px;
-    background-image: url(img/arrow_black.png);
+    height: 8px;
+    /*background-image: url(img/arrow_black.png);*/
+    background-image: url(img/down_arrow_icon.svg);
     background-position: right center;
     background-repeat: no-repeat;
     background-size: contain;
     /*position: absolute;*/
     position: relative;
-    top: 8px;
+    top: 6px;
     right: -4px;
     -webkit-transition-property: transform;
     -webkit-transition-duration: .3s;
@@ -4229,7 +4231,8 @@ img.logo_black {
 }
 
 .dropdown_item_title.green_active:before {
-    background-image: url(img/arrow_down.png);
+    /*background-image: url(img/arrow_down.png);*/
+    background-image: url(img/down_arrow_icon_white.svg);
 }
 
 .green_pill_2 {
