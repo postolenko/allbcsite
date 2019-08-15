@@ -148,6 +148,10 @@ var filtersCoord,
 
 var innerWrapp;
 
+$(window).on( "load", function() {
+    $(".scroll").mCustomScrollbar();
+});
+
 $(window).resize(function() {
     bodyWidth = w.innerWidth || e.clientWidth || g.clientWidth;
     getAdaptivePositionElements();
@@ -1120,6 +1124,63 @@ $(document).ready(function() {
         filtersIndex = $(this).attr("data-radio-filter");
         filtersArray = "";
         $("[data-filters-index = '"+filtersIndex+"']").text($(this).html());
+    });
+
+    // -----------------
+
+    if( $(".object_slider_big").length > 0 ) {
+        $(".object_slider_big").not(".slick-initialized").slick({
+            dots: false,
+            arrows: true,
+            autoplay: true,
+            autoplaySpeed: 4000,
+            speed: 1200,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            fade: true,
+            asNavFor: '.object_slider_miniatures',
+            prevArrow: '<button class="slick-prev slick_prev_white" aria-label="Previous" type="button"><img src="img/slider_arrow_white.svg" alt="" /></button>',
+            nextArrow: '<button class="slick-next slick_next_white" aria-label="Next" type="button"><img src="img/slider_arrow_white.svg" alt="" /></button>'
+            // appendArrows: $(".slider_4_controls"),
+        });
+    }
+
+    if( $(".object_slider_miniatures").length > 0 ) {
+        $(".object_slider_miniatures").not(".slick-initialized").slick({
+            dots: false,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 4000,
+            speed: 1200,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            asNavFor: '.object_slider_big',
+            prevArrow: '<button class="slick-prev slick_prev_white" aria-label="Previous" type="button"><img src="img/slider_arrow_white.svg" alt="" /></button>',
+            nextArrow: '<button class="slick-next slick_next_white" aria-label="Next" type="button"><img src="img/slider_arrow_white.svg" alt="" /></button>'
+            // appendArrows: $(".slider_4_controls"),
+            // responsive: [
+            //     {
+            //       breakpoint: 900,
+            //       settings: {
+            //         slidesToShow: 2,
+            //         slidesToScroll: 1
+            //       }
+            //     },
+            //     {
+            //       breakpoint: 620,
+            //       settings: {
+            //         slidesToShow: 1,
+            //         slidesToScroll: 1
+            //       }
+            //     }
+            // ]
+        });
+
+    }
+
+    $("[data-slider-btn = 'object_slider_big']").on("click", function(e) {
+        e.preventDefault();
+        $(".object_slider_big").find(".slick-active [data-fancybox]").trigger("click");
     });
 
 });
