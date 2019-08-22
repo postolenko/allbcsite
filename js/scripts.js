@@ -148,6 +148,8 @@ var filtersCoord,
 
 var innerWrapp;
 
+var dataVal;
+
 $(window).on( "load", function() {
     $(".scroll").mCustomScrollbar();
 });
@@ -1182,5 +1184,139 @@ $(document).ready(function() {
         e.preventDefault();
         $(".object_slider_big").find(".slick-active [data-fancybox]").trigger("click");
     });
+
+    // --------------------
+
+    $(".slideLink").on("click", function(e) {
+        e.preventDefault();
+        parentBlock = $(this).closest(".slidedown_box");
+        var prevContent = parentBlock.find(".prev_content");
+        var nextContent = parentBlock.find(".next_content");
+        if( $(this).hasClass("slidedown_link") ) {
+            parentBlock.addClass("active");
+        } else {
+            parentBlock.removeClass("active");
+        }        
+    });
+
+    // ---------------------
+
+    let row = document.querySelectorAll('.table_row');
+
+    for (let i = 0; i < row.length; i++) {
+      row[i].addEventListener('click', function() {
+        let check = this.querySelector('.checkbox input');
+        check.checked = !check.checked;
+      });
+    }
+
+    // ---------------------
+
+    $(".show_tel").on("click", function(e) {
+        e.preventDefault();
+        parentBlock = $(this).closest(".tel_pill");
+        parentBlock.css({
+            "display" : "none"
+        });
+        dataVal = parentBlock.attr("data-tel-pill");
+        $(".tel_visible_pill").filter("[data-tel-pill = '"+dataVal+"']").css({
+            "display": "block"
+        });
+    });
+
+    $(".hide_tel").on("click", function(e) {
+        e.preventDefault();
+        parentBlock = $(this).closest(".tel_pill");
+        parentBlock.css({
+            "display" : "none"
+        });
+        dataVal = parentBlock.attr("data-tel-pill");
+        $(".tel_hide_pill").filter("[data-tel-pill = '"+dataVal+"']").css({
+            "display": "block"
+        });
+    });
+
+    // ---------------------
+
+    $(".slide_socials").on("click", function(e) {
+        e.preventDefault();
+        // parentBlock = $(this).closest(".socials_list_wrapp");
+        var socList = $(this).closest(".socials_list");
+        var socItems = socList.find(".hide_soc");
+        if($(this).hasClass("more_socials")) {
+            socItems.addClass("visible");
+            socList.addClass("visible");
+        } else {
+            socItems.removeClass("visible");
+            socList.removeClass("visible");
+        }
+    });
+
+    // ----------
+
+    $("[data-popup-link]").on("click", function(e) {
+        e.preventDefault();
+        popupName = $(this).attr("data-popup-link");
+        div = document.createElement('div');
+        div.style.overflowY = 'scroll';
+        div.style.width = '50px';
+        div.style.height = '50px';
+        div.style.visibility = 'hidden';
+        document.body.appendChild(div);
+        scrollWidth = div.offsetWidth - div.clientWidth;
+        document.body.removeChild(div);
+        $("body").css({
+            "position" : "fixed",
+            "top" :  -$(document).scrollTop() + "px",
+            "overflow" : "hidden",
+            "right" : 0,
+            "left" : 0,
+            "bottom" : 0,
+            "padding-right" : scrollWidth + "px"
+        });
+        $("body").addClass("fixed");
+        $("[data-popup = '"+ popupName +"']").fadeIn(300);
+    });
+
+    $(".close_btn").on("click", function(e) {
+        e.preventDefault();
+        curTop = $("body").css("top");
+        curTop = Math.abs(parseInt(curTop, 10));
+        $("body").attr("style", "")
+        if (curTop !== 0) {
+            $("html").scrollTop(curTop);
+        }
+        $("body").removeClass("fixed");
+        $(this).closest("[data-popup]").fadeOut(300);
+    });
+
+    $(this).keydown(function(eventObject){
+        if (eventObject.which == 27 ) {
+            curTop = $("body").css("top");
+            curTop = Math.abs(parseInt(curTop, 10));
+            $("body").attr("style", "")
+            if (curTop !== 0) {
+                $("html").scrollTop(curTop);
+            }
+            $("body").removeClass("fixed");
+            $("[data-popup]").fadeOut(300);
+        }
+    });
+
+    $(".popup_sect").mouseup(function (e){
+        hide_element = $(".popup_wrapp");
+        if (!hide_element.is(e.target)
+            && hide_element.has(e.target).length === 0) {
+            curTop = $("body").css("top");
+            curTop = Math.abs(parseInt(curTop, 10));
+            $("body").attr("style", "")
+            if (curTop !== 0) {
+                $("html").scrollTop(curTop);
+            }
+            $("body").removeClass("fixed");
+            $("[data-popup]").fadeOut(300);
+        }
+    });
+
 
 });
