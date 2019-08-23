@@ -1254,6 +1254,17 @@ $(document).ready(function() {
 
     // ----------
 
+    $(".scroll_link").click(function(e) {
+        e.preventDefault();
+        var scrollCoordElem = $(this).attr("href");
+        var scrollCoord =  $(scrollCoordElem).offset().top;
+        $('html, body').stop().animate({
+            'scrollTop': scrollCoord
+        }, 500);
+    });
+
+    // ----------
+
     $("[data-popup-link]").on("click", function(e) {
         e.preventDefault();
         popupName = $(this).attr("data-popup-link");

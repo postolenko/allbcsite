@@ -5707,6 +5707,57 @@ img.logo_black {
     font-weight: bold;
 }
 
+.free_office p {
+    font-size: 14px;
+    line-height: 16px;
+    color: #272727;
+    font-weight: bold;
+}
+
+.free_office p a {
+    font-size: 14px;
+    line-height: 16px;
+    color: #272727;
+    font-weight: bold;
+    -webkit-transition-property: color;
+    -webkit-transition-duration: .3s;
+    -webkit-transition-timing-function: ease;
+
+    -moz-transition-property: color;
+    -moz-transition-duration: .3s;
+    -moz-transition-timing-function: ease;
+
+    -ms-transition-property: color;
+    -ms-transition-duration: .3s;
+    -ms-transition-timing-function: ease;
+
+    -o-transition-property: color;
+    -o-transition-duration: .3s;
+    -o-transition-timing-function: ease;
+
+    transition-property: color;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.free_office p a:hover {
+    color: #3EB060;
+}
+
+.pills_wrapp_2 {
+    margin: 5px 0;
+}
+
+.pill_checkbox_2 {
+    margin: 2px 0;
+}
+
+.pill_checkbox_2 label {
+    padding: 3px 10px;
+    font-size: 13px;
+    line-height: 18px;
+}
+
 .author_wrapp {
     display: table;
     width: 100%;
@@ -6703,12 +6754,12 @@ input.green_pill {
     padding-bottom: 33px;
 }
 
-.title_wrapp_2 {
+.title_wrapp_3 {
     position: relative;
     padding: 0 260px;
 }
 
-.title_wrapp_2 .green_pill {
+.title_wrapp_3 .green_pill {
     position: absolute;
     top: 8px;
     right: 0;
@@ -6823,10 +6874,6 @@ input.green_pill {
     margin: 15px 0;
 }
 
-.prev_content {
-
-}
-
 .show_content {
     display: none;
 }
@@ -6841,12 +6888,6 @@ input.green_pill {
 
 .slidedown_box p {
     line-height: 24px;
-}
-
-.table_5 {
-/*    display: flex;
-    display: -webkit-flex;
-    width: 100%;*/
 }
 
 .table_5 {
