@@ -6168,6 +6168,10 @@ p.desc_p {
     margin-top: -4px;
 }
 
+.custom_select_wrapp_3 .custom_select {
+    left: -2px;
+}
+
 .custom_select_wrapp_3 .select_input {
     font-size: 14px;
     line-height: 21px;
