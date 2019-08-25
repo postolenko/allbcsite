@@ -6742,6 +6742,10 @@ input.green_pill {
 
 /*-- Section 5 - Buisnes Center 2 --*/
 
+.scroll_x {
+    overflow-x: auto;
+}
+
 .inner_box {
     padding: 5px 0;
 }

@@ -152,9 +152,9 @@ var dataVal;
 
 $(window).on( "load", function() {
     $(".scroll").mCustomScrollbar();
-    $(".scroll_x").mCustomScrollbar({
-        axis:"x"
-    });
+    // $(".scroll_x").mCustomScrollbar({
+    //     axis:"x"
+    // });
 });
 
 $(window).resize(function() {
