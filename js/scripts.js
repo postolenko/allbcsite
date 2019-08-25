@@ -152,6 +152,9 @@ var dataVal;
 
 $(window).on( "load", function() {
     $(".scroll").mCustomScrollbar();
+    $(".scroll_x").mCustomScrollbar({
+        axis:"x"
+    });
 });
 
 $(window).resize(function() {
@@ -1158,24 +1161,24 @@ $(document).ready(function() {
             slidesToScroll: 1,
             asNavFor: '.object_slider_big',
             prevArrow: '<button class="slick-prev slick_prev_white" aria-label="Previous" type="button"><img src="img/slider_arrow_white.svg" alt="" /></button>',
-            nextArrow: '<button class="slick-next slick_next_white" aria-label="Next" type="button"><img src="img/slider_arrow_white.svg" alt="" /></button>'
+            nextArrow: '<button class="slick-next slick_next_white" aria-label="Next" type="button"><img src="img/slider_arrow_white.svg" alt="" /></button>',
             // appendArrows: $(".slider_4_controls"),
-            // responsive: [
-            //     {
-            //       breakpoint: 900,
-            //       settings: {
-            //         slidesToShow: 2,
-            //         slidesToScroll: 1
-            //       }
-            //     },
-            //     {
-            //       breakpoint: 620,
-            //       settings: {
-            //         slidesToShow: 1,
-            //         slidesToScroll: 1
-            //       }
-            //     }
-            // ]
+            responsive: [
+                {
+                  breakpoint: 900,
+                  settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                  }
+                },
+                {
+                  breakpoint: 620,
+                  settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                  }
+                }
+            ]
         });
 
     }
@@ -1205,7 +1208,7 @@ $(document).ready(function() {
 
     for (let i = 0; i < row.length; i++) {
       row[i].addEventListener('click', function() {
-        let check = this.querySelector('.checkbox input');
+        let check = this.querySelector('.radio_2 input');
         check.checked = !check.checked;
       });
     }
@@ -1240,7 +1243,6 @@ $(document).ready(function() {
 
     $(".slide_socials").on("click", function(e) {
         e.preventDefault();
-        // parentBlock = $(this).closest(".socials_list_wrapp");
         var socList = $(this).closest(".socials_list");
         var socItems = socList.find(".hide_soc");
         if($(this).hasClass("more_socials")) {
@@ -1328,6 +1330,24 @@ $(document).ready(function() {
             $("[data-popup]").fadeOut(300);
         }
     });
+
+    // -----------------------
+
+    if( $(".office_slider").length > 0 ) {
+        $(".office_slider").not(".slick-initialized").slick({
+            dots: false,
+            arrows: true,
+            autoplay: true,
+            autoplaySpeed: 4000,
+            speed: 1200,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            fade: true,
+            prevArrow: '<button class="slick-prev slick_prev_white" aria-label="Previous" type="button"><img src="img/slider_arrow_white.svg" alt="" /></button>',
+            nextArrow: '<button class="slick-next slick_next_white" aria-label="Next" type="button"><img src="img/slider_arrow_white.svg" alt="" /></button>'
+            // appendArrows: $(".slider_4_controls"),
+        });
+    }
 
 
 });
