@@ -1204,14 +1204,24 @@ $(document).ready(function() {
 
     // ---------------------
 
-    let row = document.querySelectorAll('.table_row');
+    // let row = document.querySelectorAll('.table_row');
 
-    for (let i = 0; i < row.length; i++) {
-      row[i].addEventListener('click', function() {
-        let check = this.querySelector('.radio_2 input');
-        check.checked = !check.checked;
-      });
-    }
+    // for (let i = 0; i < row.length; i++) {
+    //   row[i].addEventListener('click', function() {
+    //     let check = this.querySelector('.radio_2 input');
+    //     check.checked = !check.checked;
+    //   });
+    // }
+
+    $(".table_row").on("click", function(e) {
+        e.preventDefault();
+        var radioInput = $(this).find(".radio_2 input");
+        if(radioInput.checked) {
+            radioInput.prop("checked", "false");
+        } else {
+            radioInput.prop("checked", "true");
+        }
+    });
 
     // ---------------------
 
