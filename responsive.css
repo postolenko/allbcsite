@@ -604,6 +604,10 @@
 		padding-top: 48px;
 	}
 
+	.breadcrumbs_wrapp_2 {
+    	padding-top: 60px;
+	}
+
 	/*-- Header --*/
 
 	.header_site {
@@ -863,6 +867,15 @@
 	/*-- /Section 2 - Buisnes Center* --*/
 	/*-- /Section 3 - Buisnes Center* --*/
 
+	/*-- Popups --*/
+
+	.popup_office_header h3 {
+	    font-size: 22px;
+	    line-height: 30px;
+	}
+
+	/*-- /Popups --*/
+
 }
 
 @media only screen and (max-width: 767px) {
@@ -896,10 +909,6 @@
 
 	.header_1 .dropdown_title:before {
 	    top: 22px;
-	}
-
-	.breadcrumbs_wrapp_2 {
-    	padding-top: 50px;
 	}
 
 	/*-- Section 1 --*/
@@ -1144,6 +1153,37 @@
 
 	/*-- Section 5 - Buisnes Center 2 --*/
 
+	/*-- Popups --*/
+
+	.popup_office_header {
+	    padding: 0 50px 0 30px;
+	}
+
+	.two_cols_4 {
+		display: block;
+	    margin: 0;
+	}
+
+	.two_cols_4 .col:nth-child(1) {
+	    width: 100%;
+	    padding: 5px 0;
+	}
+
+	.two_cols_4 .col:nth-child(2) {
+	    width: 100%;
+	    padding: 5px 0;
+	}
+
+	.office_slider {
+	    margin: 15px 0;
+	}
+
+	.green_pill_fullwidth {
+	    font-size: 18px;
+	}
+
+	/*-- /Popups --*/
+
 }
 
 @media only screen and (max-width: 700px) {
@@ -1310,6 +1350,35 @@
 	}
 
 	/*-- /Section 6 - Buisnes Center --*/
+
+	/*-- Popups --*/
+
+	.popup_office_header {
+	    padding: 0 30px 0 20px;
+	}
+
+	.popup_office_header .close_black {
+	    right: 15px;
+	}
+
+	.two_cols_4 p {
+	    font-size: 15px;
+	    line-height: 21px;
+	}
+
+	.office_slider .slide .img_box {
+	    height: 200px;
+	}
+
+	.green_pill_fullwidth {
+	    padding: 10px;
+	}
+
+	.popup_office_content {
+	    padding: 0 20px;
+	}
+
+	/*-- /Popups --*/
 
 }
 
