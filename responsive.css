@@ -1696,6 +1696,24 @@
 
 	/*-- /Header --*/
 
+	/*-- Section 1 - Buisnes Center --*/
+
+	.title_desc .col {
+	    padding: 4px 0;
+	}
+
+	.title_desc .col:before {
+		display: none;
+	}
+
+	.title_desc p {
+	    font-size: 12px;
+	    line-height: 16px;
+	    font-weight: 600;
+	}
+
+	/*-- /Section 1 - Buisnes Center --*/
+
 }
 
 @media only screen and (min-width: 801px) {
