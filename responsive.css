@@ -1321,6 +1321,22 @@
 	    height: 90px;
 	}
 
+	.border_line {
+		display: none;
+	}
+
+	p.desc_p {
+	    padding-left: 0;
+	}
+
+	.tel_pill_wrapp_resp {
+		text-align: center;
+	}
+
+	.tel_pill_wrapp_resp .tel_pill {
+		margin: 0 auto;
+	}
+
 	/*-- /Section 1 - Buisnes Center --*/
 
 	/*-- Section 6 - Buisnes Center --*/
