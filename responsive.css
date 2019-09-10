@@ -608,6 +608,10 @@
     	padding-top: 60px;
 	}
 
+	.content_3 {
+		padding-top: 60px;
+	}
+
 	/*-- Header --*/
 
 	.header_site {
@@ -1713,6 +1717,11 @@
 	/*-- /Header --*/
 
 	/*-- Section 1 - Buisnes Center --*/
+
+	.breadcrumbs li a {
+	    font-size: 14px;
+	    line-height: 23px;
+	}
 
 	.title_desc .col {
 	    padding: 4px 0;

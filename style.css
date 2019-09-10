@@ -5380,7 +5380,7 @@ img.logo_black {
 /*-- Section 1 - Buisnes Center --*/
 
 .object_center_templ {
-    padding: 35px 0 29px 0;
+    padding: 4px 0 29px 0;
 }
 
 .object_center_templ .left {    
@@ -5427,6 +5427,15 @@ img.logo_black {
 
 .scale_btn:hover {
     opacity: 1;
+}
+
+.scale_btn img {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .object_slider_wrapp .scale_btn {
@@ -5661,6 +5670,28 @@ img.logo_black {
     padding: 5px 0;
 }
 
+.h3_wrapp {
+    position: relative;
+    padding-right: 30px;
+}
+
+.like_star {
+    display: block;
+    width: 25px;
+    height: 25px;
+}
+
+.like_star img {
+    display: block;
+    width: 25px;
+}
+
+.h3_wrapp .like_star {
+    position: absolute;
+    top: 7px;
+    right: 0;
+}
+
 .title_desc {
     flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
@@ -5696,6 +5727,11 @@ img.logo_black {
     font-size: 14px;
     line-height: 18px;
     color: #000000;
+}
+
+.title_desc .green_link_3 {
+    font-size: 14px;
+    line-height: 18px;
 }
 
 .title_desc .col:nth-child(2) p {
@@ -5808,6 +5844,19 @@ img.logo_black {
 p.desc_p {
     padding-left: 14%;
     color: #7E7E7E;
+}
+
+p.desc_p_2 {
+    color: #000;
+    font-size: 14px;
+}
+
+p.desc_p_2 .red {
+    color: #D00202;
+}
+
+.desc_p_2 .border_line {
+    padding: 0 4px;
 }
 
 .green_link_3 {
