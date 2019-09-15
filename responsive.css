@@ -286,6 +286,8 @@
 	.title_wrapp_3_2 .green_pill {
 		top: auto;
 		bottom: 0;
+		right: auto;
+		left: 0;
 	}
 
 	.two_cols_3 .left {
@@ -1155,6 +1157,10 @@
 	    font-size: 12px;
 	}
 
+	.table_row .photo_link {
+	    display: inline-block;
+	}
+
 	/*-- Section 5 - Buisnes Center 2 --*/
 
 	/*-- Popups --*/
@@ -1370,6 +1376,35 @@
 	}
 
 	/*-- /Section 6 - Buisnes Center --*/
+
+	/*-- Section 5 - Buisnes Center 2 --*/
+
+	.table_5, .table_6 {
+	    min-width: 498px;
+	}
+
+	.table_5 .table_row {
+	    padding-left: 25px;
+	}
+
+	.table_5 .table_row .table_cell:nth-child(1) {
+	    width: 20%;
+	    min-width: 90px;
+	}
+
+	.table_5 .table_row .table_cell:nth-child(2) {
+	    min-width: 45px;
+	}
+
+	.table_5 .table_row .table_cell:nth-child(3) {
+	    min-width: 55px;
+	}
+
+	.table_5 .table_row .table_cell:nth-child(5) {
+	    min-width: 50px;
+	}
+
+	/*-- /Section 5 - Buisnes Center 2 --*/
 
 	/*-- Popups --*/
 
@@ -1724,6 +1759,7 @@
 	}
 
 	.title_desc .col {
+		vertical-align: baseline;
 	    padding: 4px 0;
 	}
 
@@ -1733,7 +1769,7 @@
 
 	.title_desc p {
 	    font-size: 12px;
-	    line-height: 16px;
+    	line-height: 19px;
 	    font-weight: 600;
 	}
 

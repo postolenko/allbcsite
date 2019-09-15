@@ -1213,13 +1213,41 @@ $(document).ready(function() {
     //   });
     // }
 
-    $(".table_row").on("click", function(e) {
-        e.preventDefault();
-        var radioInput = $(this).find(".radio_2 input");
-        if(radioInput.checked) {
-            radioInput.prop("checked", "false");
+    // $(".star_checkbox").on("change", function(e) {
+    //     // e.stopPropagation();
+    //     // console.log("sdsdsdsdsd");
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    // });
+
+    // $(".table_row").on("click", function(e) {
+    //     e.preventDefault();
+    //     var radioInput = $(this).find(".radio_2 input");
+    //     if(radioInput.checked) {
+    //         radioInput.prop("checked", "false");
+    //     } else {
+    //         radioInput.prop("checked", "true");
+    //         var tableName = $(this).closest("[data-table]").attr("data-table");
+    //         $("[data-table-list = '"+tableName+"']").css({
+    //             "display": "block"
+    //         });
+    //     }
+    // });
+
+    // $(".table_row .radio_2 input").on("click", function(e) {
+    //     e.preventDefault();
+        
+    // });
+
+    $(".radio_2 input").on("change", function() {
+        if($(this).checked) {
+            $(this).prop("checked", "false");
         } else {
-            radioInput.prop("checked", "true");
+            $(this).prop("checked", "true");
+            var tableName = $(this).closest("[data-table]").attr("data-table");
+            $("[data-table-list = '"+tableName+"']").css({
+                "display": "block"
+            });
         }
     });
 
@@ -1359,5 +1387,53 @@ $(document).ready(function() {
         });
     }
 
+    // ---------------------------
+
+    if( $(".slider_arendators").length > 0 ) {
+        $(".slider_arendators").not(".slick-initialized").slick({
+            dots: false,
+            arrows: false,
+            slidesToShow: 6,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                  breakpoint: 1140,
+                  settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 1
+                  }
+                },
+                {
+                  breakpoint: 960,
+                  settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1
+                  }
+                },
+                {
+                  breakpoint: 768,
+                  settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                  }
+                },
+                {
+                  breakpoint: 510,
+                  settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                  }
+                },
+                {
+                  breakpoint: 400,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                  }
+                }
+              ]
+            });
+
+    }
 
 });
