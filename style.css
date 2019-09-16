@@ -4550,10 +4550,15 @@ img.logo_black {
     margin-right: 7px;
 }
 
-.metro_wrapp p {
+.metro_wrapp p,
+.metro_wrapp p a {
     color: #272727;
     font-size: 14px;
     font-weight: normal;
+}
+
+.metro_wrapp p a:hover {
+    text-decoration: underline;
 }
 
 .object_card .thumb_5_footer {
