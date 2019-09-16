@@ -6513,12 +6513,24 @@ p.desc_p_2 .red {
 
 .grey_box {
     background-color: #FAFAFA;
-    /*min-height: 280px;*/
-    /*padding: 47px 0;*/
 }
 
 .sect_4_buisnes_center {
     padding: 47px 0;
+}
+
+.arendators_slider_contorls {
+    position: relative;
+    text-align: right;
+    margin: 16px -3px 0 0;
+}
+
+.arendators_slider_contorls .slick-arrow {
+    display: inline-block;
+    margin: 3px;
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
 /*-- /Section 4 - Buisnes Center --*/
@@ -7959,3 +7971,17 @@ body.fixed {
 }
 
 /*- /Popups --*/
+
+/*-- Tell Button Responsive Fixed --*/
+
+.tel_pill_wrapp_fixed {
+    display: none;
+    width: 270px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 3;
+}
+
+/*-- /Tell Button Responsive Fixed --*/

@@ -1392,9 +1392,10 @@ $(document).ready(function() {
     if( $(".slider_arendators").length > 0 ) {
         $(".slider_arendators").not(".slick-initialized").slick({
             dots: false,
-            arrows: false,
+            arrows: true,
             slidesToShow: 6,
             slidesToScroll: 1,
+            appendArrows: $(".arendators_slider_contorls"),
             responsive: [
                 {
                   breakpoint: 1140,

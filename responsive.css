@@ -1456,6 +1456,15 @@
 
 	/*-- /Popups --*/
 
+
+	/*-- Tell Button Responsive Fixed --*/
+
+	.tel_pill_wrapp_fixed {
+		display: block;
+	}
+
+	/*-- /Tell Button Responsive Fixed --*/
+
 }
 
 @media only screen and (max-width: 500px) {
