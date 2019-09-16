@@ -68,6 +68,18 @@
 
 	/*-- /Section 1 - Info Side Page --*/
 
+	/*-- Section 5 - Buisnes Center 2 --*/
+
+	.two_cols_3_2 .right {
+	    width: 53%;
+	}
+
+	.two_cols_3_2 .left {
+	    width: 47%;
+	}
+
+	/*-- /Section 5 - Buisnes Center 2 --*/
+
 }
 
 @media only screen and (max-width: 1100px) {
@@ -915,6 +927,11 @@
 
 	.header_1 .dropdown_title:before {
 	    top: 22px;
+	}
+
+	.breadcrumbs li,
+	.breadcrumbs li a {
+	    font-weight: normal;
 	}
 
 	/*-- Section 1 --*/

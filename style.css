@@ -5794,7 +5794,7 @@ img.logo_black {
 
 .pills_wrapp_2 {
     margin: 5px 0;
-    height: 53px;
+    height: 56px;
 }
 
 .pill_checkbox_2 {
@@ -5805,6 +5805,12 @@ img.logo_black {
     padding: 3px 10px;
     font-size: 13px;
     line-height: 18px;
+}
+
+.office_info p {
+    font-size: 14px;
+    line-height: 20px;
+    color: #272727;
 }
 
 .author_wrapp {
@@ -6873,6 +6879,14 @@ input.green_pill {
     padding: 10px 10px 10px 0;
 }
 
+.two_cols_3_2 .right {
+    width: 59%;
+}
+
+.two_cols_3_2 .left {
+    width: 41%;
+}
+
 .gallery_2 {
     height: 224px;
     margin: 10px -5px;
@@ -7244,6 +7258,17 @@ input.green_pill {
     display: none;
 }
 
+.table_5.table_5_2 .table_row .table_cell:nth-child(1) {
+    width: 0;
+    min-width: 0;
+    padding-left: 0;
+}
+
+.table_5.table_5_2 .radio_2 label {
+    position: relative;
+    left: 35px;
+}
+
 .table_6 {
     margin: 10px 0;
     border: 1px solid #E1E6EF;
@@ -7313,6 +7338,17 @@ input.green_pill {
 .table_6 p {
     font-size: 13px;
     line-height: 17px;
+}
+
+.table_6.table_6_2 .table_row .table_cell:nth-child(1) {
+    width: 0;
+    min-width: 0;
+    padding-left: 0;
+}
+
+.table_6.table_6_2 .radio_2 label {
+    position: relative;
+    left: 35px;
 }
 
 /*-- /Section 5 - Buisnes Center 2 --*/
