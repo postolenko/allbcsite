@@ -829,12 +829,12 @@
 
 	.table_3,
 	.table_4 {
-		min-width: 750px;
+		min-width: 664px;
 	}
 
 	.table_3 .table_row .table_cell,
 	.table_4 .table_row .table_cell {
-	    padding: 10px 10px 14px 10px;
+	    padding: 12px 5px 8px 5px;
 	}
 
 	.table_3 .table_row .table_cell:nth-child(1) {

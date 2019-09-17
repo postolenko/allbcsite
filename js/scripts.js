@@ -1437,4 +1437,32 @@ $(document).ready(function() {
 
     }
 
+    // ---------------------------
+
+    var galleryIndex;
+    var galleriesBox;
+    var activeGallery;
+    $("[data-officegallery-index]").on("mouseover", function(e) {
+        e.preventDefault();
+        galleryIndex = $(this).attr("data-officegallery-index");
+        galleriesBox = $(this).closest("[data-galleries-table]").attr("data-galleries-table");
+        activeGallery = $("[data-galleries ='"+ galleriesBox +"'] [data-officegallery-index ='"+galleryIndex+"']");
+        if(activeGallery.is(":hidden")) {
+            $("[data-galleries ='"+ galleriesBox +"'] .office_gallery").css({
+                "display" : "none"
+            });
+            activeGallery.css({
+                "display" : "block"
+            });
+        }
+    });
+
+    $(".gallery_2").each(function() {
+        if($(this).find(".img_box").length == 2) {
+            $(this).addClass("gallery_two_cols");
+        } else if($(this).find(".img_box").length == 1) {
+            $(this).addClass("gallery_one_cols");
+        }
+    });
+
 });
