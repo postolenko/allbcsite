@@ -6299,7 +6299,7 @@ p.desc_p_2 .red {
 }
 
 .table_3 .table_row .table_cell:nth-child(3) {
-    width: 6%;
+    width: 7%;
 }
 
 .table_3 .table_row .table_cell:nth-child(4) {
@@ -6311,33 +6311,28 @@ p.desc_p_2 .red {
 }
 
 .table_3 .table_row .table_cell:nth-child(6) {
-    width: 12%;
+    width: 14%;
     text-align: left;
 }
 
 .table_3 .table_row .table_cell:nth-child(7) {
-    width: 24%;
+    width: 36%;
     text-align: left;
 }
 
 .table_3 .table_row .table_cell:nth-child(8) {
-    width: 11%;
-    padding-top: 14px;
-    padding-bottom: 14px;
+    width: 9%;
 }
 
 .table_3 .table_row .table_cell:nth-child(9) {
-    width: 13%;
-    text-align: right;
-    padding-right: 30px;
-}
-
-.table_3 .table_row .table_cell:nth-child(10) {
     display: none;
-    width: 24%;
-    padding-right: 30px;
-    padding-top: 7px;
-    padding-bottom: 7px;
+    width: 270px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ffffff;
 }
 
 .table_3 .table_row:nth-child(1) .table_cell:nth-child(1) {
@@ -6349,7 +6344,7 @@ p.desc_p_2 .red {
 }
 
 .table_3 .table_row:nth-child(1) .table_cell:nth-child(3) {
-    width: 6%;
+    width: 7%;
 }
 
 .table_3 .table_row:nth-child(1) .table_cell:nth-child(4) {
@@ -6361,12 +6356,12 @@ p.desc_p_2 .red {
 }
 
 .table_3 .table_row:nth-child(1) .table_cell:nth-child(6) {
-    width: 12%;
+    width: 14%;
     text-align: left;
 }
 
 .table_3 .table_row:nth-child(1) .table_cell:nth-child(7) {
-    width: 24%;
+    width: 45%;
     text-align: left;
 }
 
@@ -6419,18 +6414,6 @@ p.desc_p_2 .red {
     -moz-box-shadow: 0 3px 6px rgba(86, 86, 86, .15);
     box-shadow: 0 3px 6px rgba(86, 86, 86, .15);
 }
-
-/*.table_3 .hover_row:hover .table_cell:nth-child(8) {
-    display: none;
-}*/
-
-/*.table_3 .hover_row:hover .table_cell:nth-child(9) {
-    display: none;
-}*/
-
-/*.table_3 .hover_row:hover .table_cell:nth-child(9) {
-    display: block;
-}*/
 
 .table_3 .table_row:nth-child(even) .table_cell:nth-child(9) {
     background-color: #F8F8F8;
@@ -6520,8 +6503,8 @@ p.desc_p_2 .red {
 .table_4 .table_row .table_cell:nth-child(7) {
     display: none;
     width: 270px;
-    padding-top: 7px;
-    padding-bottom: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     position: absolute;
     top: 0;
     right: 0;
@@ -6979,14 +6962,6 @@ input.green_pill {
 .two_cols_3 .left {
     width: 58%;
     padding: 10px 10px 10px 0;
-}
-
-.two_cols_3_2 .right {
-    width: 59%;
-}
-
-.two_cols_3_2 .left {
-    width: 41%;
 }
 
 .office_gallery {
