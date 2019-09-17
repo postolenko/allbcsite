@@ -1385,11 +1385,11 @@
 	/*-- Section 5 - Buisnes Center 2 --*/
 
 	.table_5, .table_6 {
-	    min-width: 498px;
+	    min-width: 520px;
 	}
 
 	.table_5 .table_row {
-	    padding-left: 25px;
+	    padding-left: 35px;
 	}
 
 	.table_5 .table_row .table_cell:nth-child(1) {
@@ -1409,8 +1409,39 @@
 	    min-width: 50px;
 	}
 
+	.table_6 .table_row {
+	    padding-left: 35px;
+	}
+
 	.table_5_2, .table_6_2 {
-	    min-width: 412px;
+	    min-width: 410px;
+	}
+
+	.table_5_2 .table_row,
+	.table_6_2 .table_row {
+	    padding-left: 5px;
+	}
+
+	.table_5_2 .table_row .table_cell:nth-child(1) {
+		width: 15%;
+	    min-width: 60px;
+	}
+
+	.table_5_2 .table_row .table_cell:nth-child(3) {
+	    min-width: 80px;
+	}
+
+	.table_5_2 .table_row .table_cell:nth-child(5) {
+	    min-width: 90px;
+	}
+
+	.table_6_2 .table_row .table_cell:nth-child(1) {
+		width: 15%;
+	    min-width: 60px;
+	}
+
+	.table_6_2 .table_row .table_cell:nth-child(3) {
+	    min-width: 95px;
 	}
 
 	/*-- /Section 5 - Buisnes Center 2 --*/

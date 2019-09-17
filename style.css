@@ -6964,6 +6964,16 @@ input.green_pill {
     padding: 10px 10px 10px 0;
 }
 
+.two_cols_3_2 .right {
+    width: 52%;
+    padding: 10px 0 10px 10px;
+}
+
+.two_cols_3_2 .left {
+    width: 48%;
+    padding: 10px 10px 10px 0;
+}
+
 .office_gallery {
     display: none;
 }
@@ -7193,7 +7203,7 @@ input.green_pill {
 
 .table_5 .table_row .table_cell:nth-child(7) {
     width: 10%;
-    min-width: 40px;
+    min-width: 70px;
     white-space: nowrap;
 }
 
@@ -7358,16 +7368,37 @@ input.green_pill {
     display: none;
 }
 
-.table_5.table_5_2 .table_row .table_cell:nth-child(1) {
-    width: 0;
-    min-width: 0;
-    padding-left: 0;
+.table_5_2 .table_row .table_cell:nth-child(1) {
+    width: 10%;
+    min-width: 70px;
 }
 
-.table_5.table_5_2 .radio_2 label {
-    position: relative;
-    left: 35px;
+.table_5_2 .table_row .table_cell:nth-child(2) {
+    width: 10%;
+    min-width: 60px;
 }
+
+.table_5_2 .table_row .table_cell:nth-child(3) {
+    width: 15%;
+    min-width: 80px;
+}
+
+.table_5_2 .table_row .table_cell:nth-child(4) {
+    width: 10%;
+    min-width: 60px;
+}
+
+.table_5_2 .table_row .table_cell:nth-child(5) {
+    width: 17%;
+    min-width: 90px;
+}
+
+.table_5_2 .table_row .table_cell:nth-child(6) {
+    width: 10%;
+    min-width: 70px;
+    white-space: nowrap;
+}
+
 
 .table_6 {
     margin: 10px 0;
@@ -7422,7 +7453,7 @@ input.green_pill {
 
 .table_6 .table_row .table_cell:nth-child(5) {
     width: 10%;
-    min-width: 40px;
+    min-width: 70px;
     white-space: nowrap;
 }
 
@@ -7440,15 +7471,25 @@ input.green_pill {
     line-height: 17px;
 }
 
-.table_6.table_6_2 .table_row .table_cell:nth-child(1) {
-    width: 0;
-    min-width: 0;
-    padding-left: 0;
+.table_6_2 .table_row .table_cell:nth-child(1) {
+    width: 10%;
+    min-width: 70px;
 }
 
-.table_6.table_6_2 .radio_2 label {
-    position: relative;
-    left: 35px;
+.table_6_2 .table_row .table_cell:nth-child(2) {
+    width: 15%;
+    min-width: 90px;
+}
+
+.table_6_2 .table_row .table_cell:nth-child(3) {
+    width: 17%;
+    min-width: 90px;
+}
+
+.table_6_2 .table_row .table_cell:nth-child(4) {
+    width: 10%;
+    min-width: 70px;
+    white-space: nowrap;
 }
 
 /*-- /Section 5 - Buisnes Center 2 --*/
