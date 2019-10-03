@@ -5418,10 +5418,6 @@ img.logo_black {
     position: relative;
 }
 
-.object_slider_big {
-
-}
-
 .scale_btn {
     width: 36px;
     height: 36px;
@@ -5480,10 +5476,6 @@ img.logo_black {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-}
-
-.object_slider_miniatures {
-
 }
 
 .object_slider_miniatures .slide {    
@@ -6190,21 +6182,12 @@ p.desc_p_2 .red {
     padding: 24px 0 12px 0;
 }
 
-.specifications {
-/*    flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;*/
-}
-
 .specification_thumb {
     display: inline-table;
     vertical-align: top;
     width: 46%;
     margin: 15px 2%;
 }
-
-/*.specification_thumb .col {
-    padding-right: 10px;
-}*/
 
 .specification_thumb .col:nth-child(1) {
     display: table-cell;
@@ -6609,10 +6592,6 @@ p.desc_p_2 .red {
     padding: 52px 0 34px 0;
 }
 
-.location_templ {
-
-}
-
 .location_templ p {
     margin: 24px 0;
     line-height: 24px;
@@ -6722,16 +6701,7 @@ p.desc_p_2 .red {
 }
 
 .hide_btn_wrapp {
-    /*margin: 10px 0;*/
     margin: 10px 0 13px 0;
-}
-
-.hide_btn_wrapp p {
-
-}
-
-.h2_wrapp_2 {
-
 }
 
 .h2_wrapp_2 h2 {
@@ -6948,10 +6918,6 @@ input.green_pill {
     position: absolute;
     top: 8px;
     right: 0;
-}
-
-.two_cols_3 {
-
 }
 
 .two_cols_3 .right {
@@ -7399,7 +7365,6 @@ input.green_pill {
     white-space: nowrap;
 }
 
-
 .table_6 {
     margin: 10px 0;
     border: 1px solid #E1E6EF;
@@ -7493,8 +7458,6 @@ input.green_pill {
 }
 
 /*-- /Section 5 - Buisnes Center 2 --*/
-
-
 
 /*-------------------------------------------*/
 /* ----- FOOTER ------ */
@@ -8041,10 +8004,6 @@ body.fixed {
     margin: 34px 0 24px 0;
 }
 
-.office_slider .slide {
-
-}
-
 .office_slider .slide .img_box {
     height: 330px;
     overflow: hidden;
@@ -8056,10 +8015,6 @@ body.fixed {
 
 .popup_office_content {
     padding: 0 30px;
-}
-
-.slidedown_box {
-
 }
 
 .plus_2 {

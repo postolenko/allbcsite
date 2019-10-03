@@ -152,9 +152,6 @@ var dataVal;
 
 $(window).on( "load", function() {
     $(".scroll").mCustomScrollbar();
-    // $(".scroll_x").mCustomScrollbar({
-    //     axis:"x"
-    // });
 });
 
 $(window).resize(function() {
@@ -1203,41 +1200,6 @@ $(document).ready(function() {
     });
 
     // ---------------------
-
-    // let row = document.querySelectorAll('.table_row');
-
-    // for (let i = 0; i < row.length; i++) {
-    //   row[i].addEventListener('click', function() {
-    //     let check = this.querySelector('.radio_2 input');
-    //     check.checked = !check.checked;
-    //   });
-    // }
-
-    // $(".star_checkbox").on("change", function(e) {
-    //     // e.stopPropagation();
-    //     // console.log("sdsdsdsdsd");
-    //     e.preventDefault();
-    //     e.stopPropagation();
-    // });
-
-    // $(".table_row").on("click", function(e) {
-    //     e.preventDefault();
-    //     var radioInput = $(this).find(".radio_2 input");
-    //     if(radioInput.checked) {
-    //         radioInput.prop("checked", "false");
-    //     } else {
-    //         radioInput.prop("checked", "true");
-    //         var tableName = $(this).closest("[data-table]").attr("data-table");
-    //         $("[data-table-list = '"+tableName+"']").css({
-    //             "display": "block"
-    //         });
-    //     }
-    // });
-
-    // $(".table_row .radio_2 input").on("click", function(e) {
-    //     e.preventDefault();
-        
-    // });
 
     $(".radio_2 input").on("change", function() {
         if($(this).checked) {
